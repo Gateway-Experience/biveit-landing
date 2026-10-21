@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import _ from 'lodash';
 
-// The browser hooks the landing components use, copied from the app (vib3-frontend src/utils/hooks.ts) so
-// the components work unchanged. All of them only touch the browser inside effects, so they're safe to
-// render ahead of time at build.
+// The browser hooks the landing components use (they started as the app's, vib3-frontend src/utils/hooks.ts).
+// All of them only touch the browser inside effects, so they're safe to render ahead of time at build.
 
 // Provide the means to use setInterval-like logic in a hook-like manner.
 function useInterval(callback: () => void, delay: number | null) {

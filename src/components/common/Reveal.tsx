@@ -16,7 +16,6 @@ type RevealProps = React.HTMLAttributes<HTMLElement> & {
 //   React would find an attribute it didn't render and complain about a mismatch).
 // The text is always in the HTML for search engines, and without JavaScript (or with reduced motion)
 // everything simply shows.
-// References: the app's src/components/common/Reveal.tsx (same props).
 export default function Reveal({ as = 'div', delayMs = 0, style, children, ...rest }: RevealProps) {
   const [ref, hasBeenInView] = useHasBeenInView<HTMLElement>({ bottomOffset: '8%' });
   return createElement(as, {

@@ -1,5 +1,5 @@
-// The landing page's translations: the subset of the app's src/utils/i18nMappings.ts it uses, copied over
-// (by key) so the wording stays the same in both places. Change wording in the app first, then copy it here.
+// The landing page's translations, by key and language. They started as a copy of the app's
+// src/utils/i18nMappings.ts; this is now where the landing page's wording lives.
 const STRINGS: Record<string, Record<string, string>> = {
   "auth_showcase_prompt_1": {
     "en": "Build a booking site for my bike rental.",

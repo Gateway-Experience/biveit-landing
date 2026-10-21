@@ -12,7 +12,7 @@ import { withLanguage } from 'src/i18n/i18n';
 import { APP_NAME } from 'src/utils/constants';
 
 // The landing page's sections that need no JavaScript: Astro renders them to plain HTML at build time and
-// sends none of this code to the browser. Copied from the app's Landing.tsx; the hero is split around its
+// sends none of this code to the browser. (They started as the app's Landing.tsx.) The hero is split around its
 // interactive parts (the prompt box and the showcase are islands, see islands.tsx), which pages/LandingPage.astro
 // puts back together.
 

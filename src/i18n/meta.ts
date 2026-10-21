@@ -2,7 +2,7 @@ import type { LanguageCode } from 'src/utils/constants';
 
 // Search-result descriptions, one per language: what shows under the title in Google. Written for search
 // (what biveit is, for whom, and the main benefits), and kept under ~155 characters so Google doesn't cut them
-// off. Landing-only, so they live here rather than in strings.ts (which is copied from the app).
+// off. Kept apart from strings.ts because they're written for search engines rather than shown on the page.
 const META_DESCRIPTIONS: Record<LanguageCode, string> = {
   en: 'biveit builds your business website for you. Describe your business in plain words; we design, build, host and launch it, usually within a day.',
   vi: 'biveit làm website trọn gói cho doanh nghiệp: bạn chỉ cần kể về công việc kinh doanh, chúng tôi thiết kế, xây dựng, lo hosting, tên miền và đưa lên mạng.',

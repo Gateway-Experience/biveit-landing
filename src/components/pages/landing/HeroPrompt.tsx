@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import _ from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpIcon } from 'lucide-react';
@@ -20,6 +20,15 @@ export default function HeroPrompt({ className }: { className?: string }) {
   const { t } = useTranslation();
   const [idea, setIdea] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  // The box arrives as plain HTML and only comes alive once React loads, so someone quick (or on a slow phone)
+  // may already have typed into it. Keep what they typed instead of starting over empty.
+  useEffect(() => {
+    const typedBeforeLoad = textareaRef.current?.value;
+    if (typedBeforeLoad) {
+      setIdea(typedBeforeLoad);
+    }
+  }, []);
   const typedExample = useTypewriter(EXAMPLE_IDEA_KEYS.map(ideaKey => t(ideaKey)));
   const trimmedIdea = _.trim(idea);
 
@@ -44,6 +53,7 @@ export default function HeroPrompt({ className }: { className?: string }) {
       )}
     >
       <textarea
+        ref={textareaRef}
         value={idea}
         onChange={event => setIdea(event.target.value)}
         onFocus={() => setIsFocused(true)}

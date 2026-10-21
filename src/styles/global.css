@@ -2,9 +2,9 @@
 @import "tw-animate-css";
 @import "@fontsource-variable/commissioner";
 
-/* The biveit theme, copied from the app (vib3-frontend src/styles/index.css): same colour tokens, fonts and
-   animations, so the landing page looks exactly like it did inside the app. Light theme only: the landing
-   page never had a dark one. Change colours in the app first, then copy them here. */
+/* The biveit theme: the same colour tokens and font as the app (vib3-frontend src/styles/index.css), plus the
+   landing page's own animations and example-site colours. Light theme only. When the brand colours change,
+   change them in both places. */
 
 /* The landing page's business orbit: rings of icons turning slowly (BusinessOrbit). */
 @theme {

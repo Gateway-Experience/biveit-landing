@@ -10,7 +10,7 @@ import {
 import PerfumeBottleIcon from 'src/components/pages/landing/PerfumeBottleIcon';
 import type { ArtIcon } from 'src/types/landing';
 
-// The landing page's content lists and shared styles, as in the app's Landing.tsx / LandingChrome.tsx. Both the
+// The landing page's content lists and shared styles. Both the
 // plain-HTML sections (LandingSections) and the interactive islands (islands) read from here.
 
 // The landing page runs wider than the app's content column.

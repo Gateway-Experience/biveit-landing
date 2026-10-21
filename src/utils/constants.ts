@@ -1,5 +1,5 @@
-// Copies of the app's constants that the landing components need (vib3-frontend src/utils/constants.ts).
-// Keep PRICING in step with the app: it's what the FAQ quotes.
+// The landing site's constants. PRICING and NEW_PROJECT_IDEA_PARAM also exist in the app (vib3-frontend
+// src/utils/constants.ts): keep them in step by hand. PRICING is what the FAQ quotes.
 
 const APP_NAME = 'biveit';
 
