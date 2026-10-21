@@ -1,0 +1,68 @@
+---
+import Base from 'src/layouts/Base.astro'
+import Footer from 'src/components/astro/Footer.astro'
+import Header from 'src/components/astro/Header.astro'
+import {
+  DotGridBackdrop, LandingBusinessOrbit, LandingHeroPrompt, LandingHeroShowcase, LandingHowItWorks, LandingShowcase,
+} from 'src/components/pages/landing/islands'
+import {
+  LandingCompareSection, LandingDealSection, LandingFaqSection, LandingHeroIntro, LandingHeroPerks, LandingHowItWorksHeading,
+} from 'src/components/pages/landing/LandingSections'
+import { LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS } from 'src/components/pages/landing/landingData'
+import type { LanguageCode } from 'src/utils/constants'
+
+// Original purpose: biveit's front door, one per language (pages/index.astro and pages/[lang]/index.astro).
+// Intentions: the same page as the app's Landing.tsx, section for section: hero, how it works, who does what,
+// comparison, FAQ, who it's for, and examples to close. Everything arrives as finished HTML; only the moving
+// parts are hydrated, each when it's needed: the prompt box right away, the rest as they scroll into view,
+// and the dot grid once the browser is idle.
+interface Props {
+  lang: LanguageCode
+}
+
+const { lang } = Astro.props
+---
+
+<Base lang={lang}>
+  <div data-page="landing" class="relative isolate min-h-svh bg-background text-foreground">
+    <!-- Behind everything; it shows wherever a section leaves the background bare. -->
+    <DotGridBackdrop client:idle className="-z-10" />
+    <Header lang={lang} />
+    <main>
+      <section data-section="hero" class="relative isolate overflow-hidden">
+        <!-- Half the usual section gap on top: the header is right above. -->
+        <div class:list={[LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS, 'flex flex-col items-center pt-7 text-center sm:pt-10']}>
+          <!-- min-w-0 lets this column shrink below its longest word, so long words wrap instead of overflowing.
+               No scroll-reveal up here: it's on screen from the start, and fading it in would only delay the
+               first paint (which Google counts). -->
+          <div class="flex min-w-0 flex-col items-center">
+            <LandingHeroIntro lang={lang} />
+            <LandingHeroPrompt client:load lang={lang} className="mt-8" />
+            <LandingHeroPerks lang={lang} />
+          </div>
+          <div class="mt-14 w-full max-w-5xl">
+            <LandingHeroShowcase client:visible lang={lang} />
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" data-section="how-it-works" class:list={[LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS, 'scroll-mt-16']}>
+        <LandingHowItWorksHeading lang={lang} />
+        <LandingHowItWorks client:visible lang={lang} className="mt-12" />
+      </section>
+
+      <LandingDealSection lang={lang} />
+      <LandingCompareSection lang={lang} />
+      <LandingFaqSection lang={lang} />
+
+      <section data-section="businesses" class:list={[LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS, 'overflow-x-clip']}>
+        <div data-reveal>
+          <LandingBusinessOrbit client:visible lang={lang} />
+        </div>
+      </section>
+
+      <LandingShowcase client:visible lang={lang} />
+    </main>
+    <Footer lang={lang} />
+  </div>
+</Base>

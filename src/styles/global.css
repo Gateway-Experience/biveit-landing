@@ -1,0 +1,224 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/commissioner";
+
+/* The biveit theme, copied from the app (vib3-frontend src/styles/index.css): same colour tokens, fonts and
+   animations, so the landing page looks exactly like it did inside the app. Light theme only: the landing
+   page never had a dark one. Change colours in the app first, then copy them here. */
+
+/* The landing page's business orbit: rings of icons turning slowly (BusinessOrbit). */
+@theme {
+  --animate-orbit: orbit 80s linear infinite;
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+@theme inline {
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-scrim: var(--scrim);
+  --color-scrim-strong: var(--scrim-strong);
+  --color-scrim-foreground: var(--scrim-foreground);
+  --color-highlight: var(--highlight);
+  --color-brand-light: var(--brand-light);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-ink-foreground: var(--brand-ink-foreground);
+  --color-brand-strong: var(--brand-strong);
+  --color-site-moto: var(--site-moto);
+  --color-site-moto-soft: var(--site-moto-soft);
+  --color-site-home: var(--site-home);
+  --color-site-home-soft: var(--site-home-soft);
+  --color-site-hotel: var(--site-hotel);
+  --color-site-hotel-gold: var(--site-hotel-gold);
+  --color-site-boutique: var(--site-boutique);
+  --color-site-boutique-soft: var(--site-boutique-soft);
+  --color-site-perfume: var(--site-perfume);
+  --color-site-perfume-soft: var(--site-perfume-soft);
+  --color-site-cafe: var(--site-cafe);
+  --color-site-cafe-soft: var(--site-cafe-soft);
+  /* One font for everything: Commissioner, a Myriad-like humanist sans, for headings and body alike (the
+     heading token stays so headings can move to their own font again with a one-line change). It covers
+     Latin, Vietnamese and Cyrillic. Pick fonts that ship a Vietnamese subset, otherwise accented letters get
+     patched in from a fallback font and look mismatched. Chinese, Japanese and Korean fall through to the
+     system UI font, which looks native on each OS. */
+  --font-heading: 'Commissioner Variable', system-ui, sans-serif;
+  --font-sans: 'Commissioner Variable', system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Palette: lime #C9F56A (the brand), lavender #B8A4E8 (buttons) and navy #172B3A (text). The neutrals
+     (page, cards, borders, greys) are a touch lime-tinted off-whites and navy-tinted greys, so they sit
+     with the three instead of fighting them. */
+  --background: #F9FBF5;
+  --foreground: #172B3A;
+  --card: #FFFFFF;
+  --card-foreground: #172B3A;
+  --popover: #FFFFFF;
+  --popover-foreground: #172B3A;
+  /* Buttons: lavender with navy labels (6.5:1). */
+  --primary: #B8A4E8;
+  --primary-foreground: #172B3A;
+  /* Secondary surfaces like the user's chat bubbles: pale lime with navy text. */
+  --secondary: #E7F8BF;
+  --secondary-foreground: #172B3A;
+  --muted: #F0F3EA;
+  --muted-foreground: #56636E;
+  --accent: #EEF8D9;
+  --accent-foreground: #3B5A0C;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #E0E6D8;
+  --input: #E0E6D8;
+  --ring: #8C73D6;
+  --chart-1: #93CC2E;
+  --chart-2: #D6F290;
+  --chart-3: #DDD3F6;
+  --chart-4: #8C73D6;
+  --chart-5: #E7F8BF;
+  --radius: 0.625rem;
+  /* Status colours for notifications and inline feedback. `--destructive` already
+     covers errors, so error maps to it rather than duplicating a red. */
+  --success: oklch(0.55 0.15 150);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.57 0.16 75);
+  --warning-foreground: oklch(0.205 0 0);
+  --info: oklch(0.56 0.16 250);
+  --info-foreground: oklch(0.985 0 0);
+
+  /* Overlay scrims. Deliberately NOT theme-inverted: a media lightbox should stay
+     dark in light and dark mode alike. Named so nothing has to hardcode black. */
+  --scrim: oklch(0 0 0 / 40%);
+  --scrim-strong: oklch(0 0 0 / 80%);
+  --scrim-foreground: oklch(1 0 0);
+  /* Soft tint behind emphasised words and other light brand washes: pale lime. */
+  --highlight: #E7F8BF;
+  /* The brand lime and a deeper lime: the two ends of the brand gradient (logo tile, progress bars, glows,
+     the highlighter behind "We build."). Both are surfaces, never text: lime on white is unreadable. */
+  --brand-light: #C9F56A;
+  --brand-deep: #93CC2E;
+  /* A near-black navy for big dark brand surfaces (the auth pages' showcase panel), same in both themes. */
+  --brand-ink: #0F1E2A;
+  /* Light text on --brand-ink (e.g. the build console). */
+  --brand-ink-foreground: #EEF2F5;
+  /* The brand colour for things read on the page: links, icons, labels, the wordmark's capitals. The lime
+     itself is too pale to read on white, so here it's a deep lime-green from the same hue (5.6:1 on the
+     page). Dark theme: the lime itself, which reads fine on navy. */
+  --brand-strong: #4A7012;
+  /* Brand colors of the made-up example sites in the landing page's showcase. Each one is a different
+     "customer", so each gets its own look rather than ours. Light-only, like the landing page. */
+  --site-moto: oklch(0.68 0.19 45);
+  --site-moto-soft: oklch(0.95 0.04 60);
+  --site-home: oklch(0.55 0.1 195);
+  --site-home-soft: oklch(0.94 0.03 190);
+  --site-hotel: oklch(0.28 0.06 260);
+  --site-hotel-gold: oklch(0.8 0.12 85);
+  --site-boutique: oklch(0.62 0.15 15);
+  --site-boutique-soft: oklch(0.95 0.025 20);
+  --site-perfume: oklch(0.32 0.08 330);
+  --site-perfume-soft: oklch(0.95 0.025 340);
+  --site-cafe: oklch(0.42 0.07 55);
+  --site-cafe-soft: oklch(0.95 0.025 75);
+  /* The sidebar is a plain surface with a hairline border, so the lime logo and buttons carry
+     the brand. These only reference other tokens, so they follow .dark without being redeclared. */
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--muted);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  /* scrollbar-gutter: always keep room for the scrollbar, even on pages too short to scroll. Otherwise, with
+     scrollbars that take up space (Windows, or macOS set to always show them), going from a long page to a
+     short one widens the page and everything centred (header, footer, content) jumps sideways. */
+  html {
+    @apply font-sans;
+    scrollbar-gutter: stable;
+  }
+  /* Line breaking for languages without spaces between words (or with different rules): Japanese
+     breaks at natural phrase boundaries instead of mid-word (where supported), and Korean keeps its
+     space-separated words whole, the way Korean text is normally set. */
+  :lang(ja) {
+    word-break: auto-phrase;
+  }
+  :lang(ko) {
+    word-break: keep-all;
+  }
+}
+
+/* Scroll-reveal (components/common/Reveal + scripts/reveal.ts): an element marked data-reveal stays hidden
+   until the script marks it revealed, then fades in and drifts up. Only hidden when JavaScript runs (the
+   `js` class, set in layouts/Base.astro), so without it everything simply shows. */
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: none; }
+}
+html.js [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+}
+html.js [data-reveal][data-revealed] {
+  animation: reveal-in 700ms ease-out both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}

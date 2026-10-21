@@ -1,0 +1,27 @@
+---
+import Base from 'src/layouts/Base.astro'
+import Footer from 'src/components/astro/Footer.astro'
+import Header from 'src/components/astro/Header.astro'
+import { translate } from 'src/i18n/i18n'
+import { DEFAULT_LANGUAGE } from 'src/utils/constants'
+import { getLanguagePath } from 'src/utils/seo'
+
+// Shown (with a real 404 status, by the host) for any address that doesn't exist, so search engines drop dead
+// links instead of indexing an empty page. `noindex` keeps this page itself out of search results.
+const lang = DEFAULT_LANGUAGE
+---
+
+<Base lang={lang} noindex>
+  <div class="flex min-h-svh flex-col bg-background text-foreground">
+    <Header lang={lang} />
+    <main class="flex flex-1 flex-col items-center justify-center px-4 py-24 text-center">
+      <p class="text-xs font-bold tracking-[0.18em] text-brand-strong uppercase">404</p>
+      <h1 class="mt-3 font-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">This page doesn't exist</h1>
+      <p class="mt-4 max-w-md text-muted-foreground">The link may be old or mistyped. The home page has everything biveit does.</p>
+      <a href={getLanguagePath(lang)} class="mt-8 inline-flex h-11 items-center rounded-lg bg-primary px-5 font-semibold text-primary-foreground hover:brightness-95">
+        {translate(lang, 'landing_nav_start')}
+      </a>
+    </main>
+    <Footer lang={lang} />
+  </div>
+</Base>

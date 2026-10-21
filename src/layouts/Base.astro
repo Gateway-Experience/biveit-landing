@@ -1,0 +1,122 @@
+---
+import _ from 'lodash'
+import '../styles/global.css'
+import latinFontUrl from '@fontsource-variable/commissioner/files/commissioner-latin-wght-normal.woff2?url'
+import latinExtFontUrl from '@fontsource-variable/commissioner/files/commissioner-latin-ext-wght-normal.woff2?url'
+import vietnameseFontUrl from '@fontsource-variable/commissioner/files/commissioner-vietnamese-wght-normal.woff2?url'
+import cyrillicFontUrl from '@fontsource-variable/commissioner/files/commissioner-cyrillic-wght-normal.woff2?url'
+
+import { getLanguagePath, getPageMeta, getStructuredData } from 'src/utils/seo'
+import { LANGUAGES, DEFAULT_LANGUAGE, type LanguageCode } from 'src/utils/constants'
+
+// Intentions: the page shell, with everything search engines and link previews read: the language, title and
+// description, the canonical address, the other language versions (hreflang), the preview image and the
+// structured data. One per language, so each version is its own indexable page.
+interface Props {
+  lang: LanguageCode
+  // For pages that shouldn't show up in search results (the 404 page).
+  noindex?: boolean
+}
+
+const { lang, noindex = false } = Astro.props
+const site = Astro.site as URL
+const language = _.find(LANGUAGES, { code: lang })!
+const { title, socialTitle, description } = getPageMeta(lang)
+const canonicalUrl = new URL(getLanguagePath(lang), site).href
+const previewImageUrl = new URL('/og-image.png', site).href
+const structuredData = getStructuredData(lang, site)
+// The font files this language's text needs, fetched right away instead of after the styles are read, so the
+// text shows in its real font sooner and doesn't jump when the font swaps in. Latin is always needed (the
+// brand name, the example sites); Chinese, Japanese and Korean use the system font, so they need nothing more.
+const PRELOAD_FONTS: Record<LanguageCode, string[]> = {
+  en: [latinFontUrl],
+  vi: [latinFontUrl, latinExtFontUrl, vietnameseFontUrl],
+  ko: [latinFontUrl],
+  zh: [latinFontUrl],
+  ja: [latinFontUrl],
+  ru: [latinFontUrl, cyrillicFontUrl],
+}
+---
+
+<!doctype html>
+<html lang={language.htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#C9F56A" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- Allow big image previews in Google (Discover, image results). -->
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <link rel="canonical" href={canonicalUrl} />
+    {LANGUAGES.map(other => (
+      <link rel="alternate" hreflang={other.htmlLang} href={new URL(getLanguagePath(other.code), site).href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(getLanguagePath(DEFAULT_LANGUAGE), site).href} />
+
+    {PRELOAD_FONTS[lang].map(fontUrl => <link rel="preload" as="font" type="font/woff2" href={fontUrl} crossorigin />)}
+
+    <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="biveit" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={previewImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={language.ogLocale} />
+    {LANGUAGES.filter(other => other.code !== lang).map(other => (
+      <meta property="og:locale:alternate" content={other.ogLocale} />
+    ))}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={previewImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <!-- `js`: scroll-reveal may hide content until it fades in (global.css); without JavaScript it all shows. -->
+    <script is:inline>document.documentElement.classList.add('js')</script>
+  </head>
+  <body class="bg-background text-foreground">
+    <slot />
+  </body>
+</html>
+
+<script>
+  import 'src/scripts/reveal'
+  import { API_ME_URL, APP_START_URL } from 'src/utils/appUrls'
+
+  // Intentions: the landing page is for visitors who aren't signed in (as in the app, where signed-in users skip
+  // it). On every visit we ask the API who this is and send a real (non-guest) user straight into the app;
+  // `replace` swaps the landing page out of history so Back from the app doesn't bounce here again. Anything
+  // going wrong (API down, not signed in, cookie not sent) just leaves the landing page as it is.
+  // Unlike fourpixie-landing, the page isn't hidden while we ask: that held back the first paint for every
+  // visitor (a speed hit Google counts), to spare the rare signed-in visitor a brief glimpse of it.
+  // References: fourpixie-landing's layouts/Base.astro.
+  const sendSignedInUserToApp = async () => {
+    try {
+      const response = await fetch(API_ME_URL, { credentials: 'include' })
+      if (response.ok) {
+        const user = await response.json()
+        if (user?.user_type !== 'GUEST') {
+          location.replace(APP_START_URL)
+        }
+      }
+    } catch {
+      // Not worth bothering the visitor about, see above.
+    }
+  }
+
+  sendSignedInUserToApp()
+  // A page restored from the back/forward cache doesn't run scripts again, but `pageshow` fires with
+  // `persisted`: the visitor may have signed in since, so check again.
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) sendSignedInUserToApp()
+  })
+</script>

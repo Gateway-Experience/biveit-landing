@@ -1,0 +1,78 @@
+---
+import { CN, GB, JP, KR, RU, VN } from 'country-flag-icons/react/3x2'
+import { Image } from 'astro:assets'
+import { ChevronDownIcon } from 'lucide-react'
+import _ from 'lodash'
+
+import logo from 'src/assets/brand/biveit-logo.png'
+import wordmark from 'src/assets/brand/biveit-wordmark.png'
+import { BRAND_BUTTON_CLASS, LANDING_WIDTH_CLASS } from 'src/components/pages/landing/landingData'
+import { translate } from 'src/i18n/i18n'
+import { APP_START_URL } from 'src/utils/appUrls'
+import { APP_NAME, LANGUAGES, type LanguageCode } from 'src/utils/constants'
+import { getLanguagePath } from 'src/utils/seo'
+
+// Intentions: the landing page's top bar (the app's LandingHeader): the logo, a language menu and the start
+// button, on the brand lime. The language menu is plain links to each language's page inside a <details>, so
+// it opens without JavaScript and search engines can follow it to every version.
+interface Props {
+  lang: LanguageCode
+}
+
+const { lang } = Astro.props
+// SVG flags rather than emoji, which show up as plain letters on Windows. Same as the app's LanguageSelector.
+const FLAGS: Record<LanguageCode, typeof GB> = { en: GB, vi: VN, ko: KR, zh: CN, ja: JP, ru: RU }
+const CurrentFlag = FLAGS[lang]
+---
+
+<header class="sticky top-0 z-40 border-b border-foreground/10 bg-brand-light">
+  <div class:list={[LANDING_WIDTH_CLASS, 'flex h-16 items-center justify-between gap-3']}>
+    <a href={getLanguagePath(lang)} aria-label={APP_NAME} class="flex items-center gap-2.5 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring/40">
+      <!-- WebP at 2× their shown size (sharp on retina, a fraction of the PNG's weight), loaded first: they're at
+           the very top of every page. -->
+      <Image src={logo} height={72} format="webp" quality={90} alt="" loading="eager" fetchpriority="high" class="h-9 w-auto" />
+      <Image src={wordmark} height={48} format="webp" quality={90} alt="" loading="eager" fetchpriority="high" class="h-6 w-auto" />
+    </a>
+    <div class="flex items-center gap-1 sm:gap-2">
+      <details data-component="language-menu" class="group relative">
+        <summary class="flex cursor-pointer list-none items-center gap-2 rounded-md px-2 py-1.5 text-sm font-semibold hover:bg-foreground/5 [&::-webkit-details-marker]:hidden">
+          <CurrentFlag className="h-3 w-4.5 rounded-[2px] shadow-xs" />
+          {_.toUpper(lang)}
+          <ChevronDownIcon className="size-3.5 transition-transform group-open:rotate-180" />
+        </summary>
+        <ul class="absolute right-0 mt-2 min-w-44 overflow-hidden rounded-xl border bg-popover p-1 text-popover-foreground shadow-lg">
+          {LANGUAGES.map(language => {
+            const Flag = FLAGS[language.code]
+            return (
+              <li>
+                <a
+                  href={getLanguagePath(language.code)}
+                  hreflang={language.htmlLang}
+                  lang={language.htmlLang}
+                  data-languagecode={language.code}
+                  aria-current={language.code === lang ? 'page' : undefined}
+                  class:list={['flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm hover:bg-accent', language.code === lang && 'font-semibold']}
+                >
+                  <Flag className="h-3 w-4.5 rounded-[2px] shadow-xs" />
+                  {language.name}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </details>
+      <a href={APP_START_URL} class:list={['inline-flex h-9 items-center rounded-lg px-3.5 text-[0.8125rem] font-semibold whitespace-nowrap transition-all', BRAND_BUTTON_CLASS]}>
+        {translate(lang, 'landing_nav_start')}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Close the language menu when clicking anywhere outside it (a <details> only closes from its own summary).
+  document.addEventListener('click', event => {
+    document.querySelectorAll<HTMLDetailsElement>('[data-component="language-menu"][open]').forEach(menu => {
+      if (!menu.contains(event.target as Node)) menu.open = false
+    })
+  })
+</script>

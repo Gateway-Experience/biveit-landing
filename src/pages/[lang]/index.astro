@@ -1,0 +1,13 @@
+---
+import LandingPage from 'src/components/astro/LandingPage.astro'
+import { DEFAULT_LANGUAGE, LANGUAGES, type LanguageCode } from 'src/utils/constants'
+
+// Every language but English (which lives at `/`) gets its own page at `/<code>/`.
+export function getStaticPaths() {
+  return LANGUAGES.filter(language => language.code !== DEFAULT_LANGUAGE).map(language => ({ params: { lang: language.code } }))
+}
+
+const lang = Astro.params.lang as LanguageCode
+---
+
+<LandingPage lang={lang} />
