@@ -9,6 +9,7 @@ const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL ?? '';
 // and land there afterwards.
 const APP_START_URL = `${APP_URL}/projects`;
 const APP_PRICING_URL = `${APP_URL}/pricing`;
+const APP_TERMS_URL = `${APP_URL}/terms-of-service`;
 const APP_PRIVACY_URL = `${APP_URL}/privacy-policy`;
 const APP_COOKIE_POLICY_URL = `${APP_URL}/cookie-policy`;
 // The app's "who am I": 200 with the user when signed in, 401 otherwise. Used to send signed-in users
@@ -24,6 +25,7 @@ function buildLoginToNewProjectUrl(idea: string) {
 export {
   APP_START_URL,
   APP_PRICING_URL,
+  APP_TERMS_URL,
   APP_PRIVACY_URL,
   APP_COOKIE_POLICY_URL,
   API_ME_URL,

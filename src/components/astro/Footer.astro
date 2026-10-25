@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 import logo from 'src/assets/brand/biveit-logo.png'
 import { LANDING_WIDTH_CLASS } from 'src/components/pages/landing/landingData'
 import { translate } from 'src/i18n/i18n'
-import { APP_COOKIE_POLICY_URL, APP_PRICING_URL, APP_PRIVACY_URL } from 'src/utils/appUrls'
+import { APP_COOKIE_POLICY_URL, APP_PRICING_URL, APP_PRIVACY_URL, APP_TERMS_URL } from 'src/utils/appUrls'
 import { APP_NAME, type LanguageCode } from 'src/utils/constants'
 
 // The landing page's footer (the app's PublicLayout has a matching one). Pricing and the policies live in the app.
@@ -22,6 +22,7 @@ const { lang } = Astro.props
     </div>
     <nav class="flex items-center gap-4">
       <a href={APP_PRICING_URL} class="hover:text-foreground">{translate(lang, 'pricing_nav')}</a>
+      <a href={APP_TERMS_URL} class="hover:text-foreground">{translate(lang, 'terms_title')}</a>
       <a href={APP_PRIVACY_URL} class="hover:text-foreground">{translate(lang, 'landing_footer_privacy')}</a>
       <a href={APP_COOKIE_POLICY_URL} class="hover:text-foreground">{translate(lang, 'cookie_policy_title')}</a>
     </nav>

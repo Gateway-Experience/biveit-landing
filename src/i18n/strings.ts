@@ -33,6 +33,14 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Сделай портфолио для моих фотографий.",
     "ko": "사진 포트폴리오 사이트를 만들어 줘."
   },
+  "terms_title": {
+    "en": "Terms of Service",
+    "vi": "Điều khoản dịch vụ",
+    "zh": "服务条款",
+    "ja": "利用規約",
+    "ru": "Условия использования",
+    "ko": "서비스 약관"
+  },
   "cookie_policy_title": {
     "en": "Cookie Policy",
     "vi": "Chính sách cookie",

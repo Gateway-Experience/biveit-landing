@@ -28,7 +28,7 @@ const PRICING = {
   publishPrice: 49,
   salePublishPrice: 39 as number | null,
   monthlyPrice: 9,
-  freeDomainBelow: 10,
+  freeDomainBelow: 20,
 };
 
 // The query param that carries a site idea into the app's new-project form (/projects/new?idea=...).
