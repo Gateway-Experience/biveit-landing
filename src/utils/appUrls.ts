@@ -16,10 +16,11 @@ const APP_COOKIE_POLICY_URL = `${APP_URL}/cookie-policy`;
 // straight into the app (layouts/Base.astro).
 const API_ME_URL = `${API_BASE_URL}/me`;
 
-// [Pure] Log in, then on to the new-project form with `idea` already in it (the hero's prompt box).
-function buildLoginToNewProjectUrl(idea: string) {
-  const newProjectPath = `/projects/new?${new URLSearchParams({ [NEW_PROJECT_IDEA_PARAM]: idea })}`;
-  return `${APP_URL}/login?${new URLSearchParams({ next: newProjectPath })}`;
+// [Pure] Log in, then on to the project list with `idea` in the URL: the app opens its new-project form with
+// it already filled in (the hero's prompt box). Someone already signed in goes straight through the login page.
+function buildLoginWithIdeaUrl(idea: string) {
+  const projectsPath = `/projects?${new URLSearchParams({ [NEW_PROJECT_IDEA_PARAM]: idea })}`;
+  return `${APP_URL}/login?${new URLSearchParams({ next: projectsPath })}`;
 }
 
 export {
@@ -29,5 +30,5 @@ export {
   APP_PRIVACY_URL,
   APP_COOKIE_POLICY_URL,
   API_ME_URL,
-  buildLoginToNewProjectUrl,
+  buildLoginWithIdeaUrl,
 };

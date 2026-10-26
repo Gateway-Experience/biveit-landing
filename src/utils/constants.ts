@@ -1,4 +1,4 @@
-// The landing site's constants. PRICING and NEW_PROJECT_IDEA_PARAM also exist in the app (vib3-frontend
+// The landing site's constants. PRICING and NEW_PROJECT_IDEA_PARAM also exist in the app (biveit-frontend
 // src/utils/constants.ts): keep them in step by hand. PRICING is what the FAQ quotes.
 
 const APP_NAME = 'biveit';
@@ -31,7 +31,8 @@ const PRICING = {
   freeDomainBelow: 20,
 };
 
-// The query param that carries a site idea into the app's new-project form (/projects/new?idea=...).
+// The query param that carries a site idea into the app's new-project form (/projects?idea=...: the app opens the
+// form with it filled in).
 // Must match NEW_PROJECT_IDEA_PARAM in the app.
 const NEW_PROJECT_IDEA_PARAM = 'idea';
 

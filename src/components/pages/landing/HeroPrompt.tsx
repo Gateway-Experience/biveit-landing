@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowUpIcon } from 'lucide-react';
 import { cn } from 'cn';
 
-import { buildLoginToNewProjectUrl } from 'src/utils/appUrls';
+import { buildLoginWithIdeaUrl } from 'src/utils/appUrls';
 import { EXAMPLE_IDEA_KEYS } from 'src/utils/constants';
 import { useTypewriter } from 'src/utils/hooks';
 
@@ -13,8 +13,8 @@ const _IDEA_MAX_LENGTH = 1000;
 
 // Original purpose: the landing hero's way in (it replaced the "Start my website" / "See how it works" buttons).
 // Intentions: a prompt box asking what site they'd like. Submitting takes them to the app's Log in, with the
-// idea riding along in the URL (login's `?next=` → /projects/new?idea=...), so the app's new-project form opens
-// with it filled in.
+// idea riding along in the URL (login's `?next=` → /projects?idea=...), so the app's new-project form opens with
+// it filled in.
 // While the box is empty and not focused, example ideas type themselves out as the placeholder.
 export default function HeroPrompt({ className }: { className?: string }) {
   const { t } = useTranslation();
@@ -36,7 +36,7 @@ export default function HeroPrompt({ className }: { className?: string }) {
     if (!trimmedIdea) {
       return;
     }
-    window.location.assign(buildLoginToNewProjectUrl(trimmedIdea));
+    window.location.assign(buildLoginWithIdeaUrl(trimmedIdea));
   };
 
   return (
