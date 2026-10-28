@@ -498,12 +498,12 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ko": "나중에 수정할 수 있나요?"
   },
   "landing_faq_cost_a": {
-    "en": "Publishing your site costs {{price}} once, then {{monthlyPrice}} a month. A domain under {{domainLimit}} is free.",
-    "vi": "Xuất bản website tốn {{price}} một lần, sau đó {{monthlyPrice}} mỗi tháng. Tên miền dưới {{domainLimit}} được miễn phí.",
-    "zh": "发布网站一次性收费 {{price}}，之后每月 {{monthlyPrice}}。低于 {{domainLimit}} 的域名免费。",
-    "ja": "サイトの公開は一度だけ {{price}}、その後は月額 {{monthlyPrice}} です。{{domainLimit}} 未満のドメインは無料です。",
-    "ru": "Публикация сайта стоит {{price}} один раз, затем {{monthlyPrice}} в месяц. Домен дешевле {{domainLimit}} — бесплатно.",
-    "ko": "사이트 공개는 1회 {{price}}, 이후 매월 {{monthlyPrice}}예요. {{domainLimit}} 미만 도메인은 무료예요."
+    "en": "Building your site is free. When it's ready, get its code for {{oneTimePrice}} once and host it yourself, or subscribe for {{monthlyPrice}} a month or {{yearlyPrice}} a year and we'll put it online for you. A domain is extra, and free under {{domainLimit}} on the yearly plan.",
+    "vi": "Xây dựng website là miễn phí. Khi đã sẵn sàng, bạn có thể nhận mã nguồn với {{oneTimePrice}} một lần và tự lo hosting, hoặc đăng ký {{monthlyPrice}} mỗi tháng hay {{yearlyPrice}} mỗi năm để chúng tôi đưa website lên mạng giúp bạn. Tên miền tính riêng, và miễn phí nếu dưới {{domainLimit}} với gói năm.",
+    "zh": "搭建网站是免费的。做好后，你可以一次性支付 {{oneTimePrice}} 拿走代码自行托管，或者订阅（每月 {{monthlyPrice}} 或每年 {{yearlyPrice}}），由我们帮你上线。域名另计，按年方案下低于 {{domainLimit}} 的域名免费。",
+    "ja": "サイト作りは無料です。完成したら、1 回 {{oneTimePrice}} でコードを受け取ってご自身でホスティングするか、月額 {{monthlyPrice}} または年額 {{yearlyPrice}} のサブスクリプションで公開まで私たちにお任せいただけます。ドメインは別料金で、年額プランなら {{domainLimit}} 未満は無料です。",
+    "ru": "Создать сайт — бесплатно. Когда он готов, заберите код за {{oneTimePrice}} единоразово и разместите его сами или оформите подписку за {{monthlyPrice}} в месяц или {{yearlyPrice}} в год — и мы запустим сайт за вас. Домен оплачивается отдельно, а на годовом тарифе домен дешевле {{domainLimit}} бесплатен.",
+    "ko": "사이트 만들기는 무료예요. 완성되면 {{oneTimePrice}}(1회)로 코드를 받아 직접 호스팅하거나, 월 {{monthlyPrice}} 또는 연 {{yearlyPrice}} 구독으로 저희가 온라인에 올려 드려요. 도메인은 별도이고, 연간 요금제에서 {{domainLimit}} 미만이면 무료예요."
   },
   "landing_faq_cost_q": {
     "en": "How much does it cost?",
@@ -514,12 +514,12 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ko": "비용은 얼마인가요?"
   },
   "landing_faq_hosting_a": {
-    "en": "We do. We'll help you pick a domain name, then handle hosting, security and launching for you.",
-    "vi": "Chúng tôi lo hết. Chúng tôi sẽ giúp bạn chọn tên miền, sau đó lo luôn hosting, bảo mật và đưa website lên mạng.",
-    "zh": "我们负责。我们会帮你挑选域名，然后搞定托管、安全和上线。",
-    "ja": "私たちです。ドメイン名選びをお手伝いして、ホスティング、セキュリティ、公開まで代わりに行います。",
-    "ru": "Мы. Поможем выбрать доменное имя, а хостинг, безопасность и запуск возьмём на себя.",
-    "ko": "저희가 해요. 도메인 이름 고르는 걸 도와드리고, 호스팅, 보안, 오픈까지 맡아서 처리해요."
+    "en": "With a subscription, we do. We'll register a domain for you, or use the one you already own, then handle hosting, security and launching. Prefer to run it yourself? Take the code instead.",
+    "vi": "Với gói đăng ký, chúng tôi lo hết. Chúng tôi sẽ đăng ký tên miền giúp bạn, hoặc dùng tên miền bạn đã có, rồi lo luôn hosting, bảo mật và đưa website lên mạng. Muốn tự vận hành? Bạn có thể chỉ nhận mã nguồn.",
+    "zh": "订阅的话，由我们负责。我们会帮你注册域名，也可以用你已有的域名，然后搞定托管、安全和上线。想自己运行？那就直接拿走代码。",
+    "ja": "サブスクリプションなら私たちです。ドメインの取得を代行するか、お持ちのドメインを使い、ホスティング、セキュリティ、公開まで行います。ご自身で運用したい場合は、コードだけ受け取ることもできます。",
+    "ru": "С подпиской — мы. Зарегистрируем домен за вас или подключим ваш собственный, а хостинг, безопасность и запуск возьмём на себя. Хотите всё делать сами? Просто заберите код.",
+    "ko": "구독하면 저희가 해요. 도메인 등록을 대신해 드리거나 이미 가진 도메인을 쓰고, 호스팅, 보안, 오픈까지 맡아요. 직접 운영하고 싶다면 코드만 받아 가셔도 돼요."
   },
   "landing_faq_hosting_q": {
     "en": "Who takes care of the domain and hosting?",

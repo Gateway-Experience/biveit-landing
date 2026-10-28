@@ -19,15 +19,15 @@ type LanguageCode = typeof LANGUAGES[number]['code'];
 
 const DEFAULT_LANGUAGE: LanguageCode = 'en';
 
-// What biveit costs, in USD (formatted for display by services/pricing).
-//   publishPrice     the regular one-time price to publish a site
-//   salePublishPrice what it's sold for while there's a sale; null = no sale, publishPrice applies
-//   monthlyPrice     the monthly charge once the site is live
-//   freeDomainBelow  a domain costing less than this is included free
+// What Biveit costs, in USD (formatted for display by services/pricing).
+//   oneTimePrice     pay once: the site's code to host yourself, plus the AI assistant for a month
+//   monthlyPrice     subscription, billed monthly: we host and deploy it, the AI assistant stays on
+//   yearlyPrice      the same subscription, billed yearly
+//   freeDomainBelow  on the yearly plan, a domain costing less than this is free
 const PRICING = {
-  publishPrice: 49,
-  salePublishPrice: 39 as number | null,
-  monthlyPrice: 9,
+  oneTimePrice: 19,
+  monthlyPrice: 19,
+  yearlyPrice: 159,
   freeDomainBelow: 20,
 };
 
