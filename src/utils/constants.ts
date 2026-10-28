@@ -1,7 +1,7 @@
 // The landing site's constants. PRICING and NEW_PROJECT_IDEA_PARAM also exist in the app (biveit-frontend
 // src/utils/constants.ts): keep them in step by hand. PRICING is what the FAQ quotes.
 
-const APP_NAME = 'biveit';
+const APP_NAME = 'Biveit';
 
 // The languages the landing page is published in. Each gets its own address: English at `/`, the others at
 // `/<code>/` (see pages/[lang]). `name` is the language's own name for itself, so people can spot theirs.

@@ -1074,12 +1074,12 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ko": "좋아요! 예약할 때 보증금을 받을까요?"
   },
   "landing_scene_chat_title": {
-    "en": "Chat with biveit",
-    "vi": "Trò chuyện với biveit",
-    "zh": "和 biveit 聊聊",
-    "ja": "biveit とチャット",
-    "ru": "Чат с biveit",
-    "ko": "biveit와 채팅"
+    "en": "Chat with Biveit",
+    "vi": "Trò chuyện với Biveit",
+    "zh": "和 Biveit 聊聊",
+    "ja": "Biveit とチャット",
+    "ru": "Чат с Biveit",
+    "ko": "Biveit와 채팅"
   },
   "landing_scene_live": {
     "en": "Live",
