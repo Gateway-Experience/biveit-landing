@@ -7,7 +7,8 @@ import vietnameseFontUrl from '@fontsource-variable/commissioner/files/commissio
 import cyrillicFontUrl from '@fontsource-variable/commissioner/files/commissioner-cyrillic-wght-normal.woff2?url'
 
 import { getLanguagePath, getPageMeta, getStructuredData } from 'src/utils/seo'
-import { LANGUAGES, DEFAULT_LANGUAGE, type LanguageCode } from 'src/utils/constants'
+import { APP_START_URL } from 'src/utils/appUrls'
+import { LANGUAGES, DEFAULT_LANGUAGE, SIGNED_IN_COOKIE, type LanguageCode } from 'src/utils/constants'
 
 // Intentions: the page shell, with everything search engines and link previews read: the language, title and
 // description, the canonical address, the other language versions (hreflang), the preview image and the
@@ -43,6 +44,13 @@ const PRELOAD_FONTS: Record<LanguageCode, string[]> = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Signed-in visitors belong in the app: the app's marker cookie says one's here, so off they go before
+         anything is drawn. Inline and first in <head>, so it runs before the page paints; it reads a cookie and
+         nothing else, so it costs the rest of the visitors nothing. `replace`: Back from the app doesn't land here.
+         The marker is only a hint: if the session behind it is gone, the app drops it and asks them to log in. -->
+    <script is:inline define:vars={{ appStartUrl: APP_START_URL, signedInCookie: SIGNED_IN_COOKIE }}>
+      if (document.cookie.split('; ').includes(`${signedInCookie}=1`)) location.replace(appStartUrl)
+    </script>
     <meta name="theme-color" content="#C9F56A" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -92,12 +100,12 @@ const PRELOAD_FONTS: Record<LanguageCode, string[]> = {
   import 'src/scripts/reveal'
   import { API_ME_URL, APP_START_URL } from 'src/utils/appUrls'
 
-  // Intentions: the landing page is for visitors who aren't signed in (as in the app, where signed-in users skip
-  // it). On every visit we ask the API who this is and send a real (non-guest) user straight into the app;
-  // `replace` swaps the landing page out of history so Back from the app doesn't bounce here again. Anything
-  // going wrong (API down, not signed in, cookie not sent) just leaves the landing page as it is.
-  // Unlike fourpixie-landing, the page isn't hidden while we ask: that held back the first paint for every
-  // visitor (a speed hit Google counts), to spare the rare signed-in visitor a brief glimpse of it.
+  // Intentions: the backup for the marker check at the top of <head>, for sessions that don't have the marker
+  // yet (signed in before it existed). We ask the API who this is and send a real (non-guest) user into the
+  // app; that call also hands them the marker, so next time it's instant. `replace` swaps the landing page out
+  // of history so Back from the app doesn't bounce here again. Anything going wrong (API down, not signed in,
+  // cookie not sent) just leaves the landing page as it is. The page isn't hidden while we ask: that would hold
+  // back the first paint for every visitor (a speed hit Google counts).
   // References: fourpixie-landing's layouts/Base.astro.
   const sendSignedInUserToApp = async () => {
     try {

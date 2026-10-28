@@ -39,6 +39,10 @@ const NEW_PROJECT_IDEA_PARAM = 'idea';
 // Example site ideas, as i18n keys: typed out as a hint in the hero's prompt box.
 const EXAMPLE_IDEA_KEYS = ['auth_showcase_prompt_1', 'auth_showcase_prompt_2', 'auth_showcase_prompt_3', 'auth_showcase_prompt_4'];
 
+// The app's readable "someone's signed in here" cookie (biveit-backend's SIGNED_IN_COOKIE, set for the whole
+// biveit.com domain). Seeing it, the page sends the visitor on to the app before drawing anything (layouts/Base.astro).
+const SIGNED_IN_COOKIE = 'biveit_signed_in';
+
 export {
   APP_NAME,
   LANGUAGES,
@@ -46,5 +50,6 @@ export {
   PRICING,
   NEW_PROJECT_IDEA_PARAM,
   EXAMPLE_IDEA_KEYS,
+  SIGNED_IN_COOKIE,
 };
 export type { LanguageCode };
