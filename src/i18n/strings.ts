@@ -433,6 +433,238 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Нужно времени: примерно чашка-другая кофе.",
     "ko": "필요한 시간: 커피 한두 잔 정도."
   },
+  "landing_demo_new_project": {
+    "en": "New project",
+    "vi": "Dự án mới",
+    "zh": "新建项目",
+    "ja": "新しいプロジェクト",
+    "ru": "Новый проект",
+    "ko": "새 프로젝트"
+  },
+  "landing_demo_home": {
+    "en": "Home",
+    "vi": "Trang chủ",
+    "zh": "首页",
+    "ja": "ホーム",
+    "ru": "Главная",
+    "ko": "홈"
+  },
+  "landing_demo_search": {
+    "en": "Search",
+    "vi": "Tìm kiếm",
+    "zh": "搜索",
+    "ja": "検索",
+    "ru": "Поиск",
+    "ko": "검색"
+  },
+  "landing_demo_recents": {
+    "en": "Recents",
+    "vi": "Gần đây",
+    "zh": "最近",
+    "ja": "最近",
+    "ru": "Недавние",
+    "ko": "최근"
+  },
+  "landing_demo_recent_yoga": {
+    "en": "Yoga classes",
+    "vi": "Lớp yoga",
+    "zh": "瑜伽课",
+    "ja": "ヨガ教室",
+    "ru": "Занятия йогой",
+    "ko": "요가 수업"
+  },
+  "landing_demo_recent_wedding": {
+    "en": "Our wedding",
+    "vi": "Đám cưới của chúng mình",
+    "zh": "我们的婚礼",
+    "ja": "私たちの結婚式",
+    "ru": "Наша свадьба",
+    "ko": "우리 결혼식"
+  },
+  "landing_demo_composer": {
+    "en": "Message Biveit",
+    "vi": "Nhắn cho Biveit",
+    "zh": "给 Biveit 发消息",
+    "ja": "Biveit にメッセージ",
+    "ru": "Сообщение для Biveit",
+    "ko": "Biveit에게 메시지 보내기"
+  },
+  "landing_demo_user_msg": {
+    "en": "Hi, I'm {{name}}! I run a small café and want a website where people can see our menu and book a table.",
+    "vi": "Chào, mình là {{name}}! Mình có một quán cà phê nhỏ và muốn có website để khách xem thực đơn và đặt bàn.",
+    "zh": "你好，我是 {{name}}！我开了一家小咖啡馆，想要一个网站，让客人能看菜单、订座位。",
+    "ja": "こんにちは、{{name}} です！小さなカフェをやっていて、メニューを見たり席を予約したりできるサイトがほしいです。",
+    "ru": "Привет, я {{name}}! У меня небольшое кафе, и мне нужен сайт, где гости смогут посмотреть меню и забронировать столик.",
+    "ko": "안녕하세요, {{name}}예요! 작은 카페를 하고 있는데, 손님들이 메뉴를 보고 자리를 예약할 수 있는 웹사이트가 필요해요."
+  },
+  "landing_demo_agent_question": {
+    "en": "Sounds lovely, {{name}}! When guests book a table, should they pay a deposit?",
+    "vi": "Nghe hay quá, {{name}}! Khi khách đặt bàn, họ có cần đặt cọc không?",
+    "zh": "听起来很棒，{{name}}！客人订座时需要先付定金吗？",
+    "ja": "すてきですね、{{name}} さん！席を予約するとき、お客さんに前金を払ってもらいますか？",
+    "ru": "Звучит чудесно, {{name}}! Когда гости бронируют столик, нужен ли залог?",
+    "ko": "멋져요, {{name}} 님! 손님이 자리를 예약할 때 예약금을 받을까요?"
+  },
+  "landing_demo_option_no_deposit": {
+    "en": "No deposit",
+    "vi": "Không cần cọc",
+    "zh": "不用定金",
+    "ja": "前金なし",
+    "ru": "Без залога",
+    "ko": "예약금 없이"
+  },
+  "landing_demo_option_deposit": {
+    "en": "Yes, a small one",
+    "vi": "Có, cọc ít thôi",
+    "zh": "要，收一点",
+    "ja": "はい、少しだけ",
+    "ru": "Да, небольшой",
+    "ko": "네, 조금만"
+  },
+  "landing_demo_agent_plan": {
+    "en": "Got it. Here's the plan for your site.",
+    "vi": "Đã rõ. Đây là kế hoạch cho website của bạn.",
+    "zh": "明白了。这是你网站的方案。",
+    "ja": "わかりました。サイトのプランはこちらです。",
+    "ru": "Понял. Вот план вашего сайта.",
+    "ko": "알겠어요. 사이트 계획은 이렇게 잡았어요."
+  },
+  "landing_demo_plan_title": {
+    "en": "Site plan",
+    "vi": "Kế hoạch website",
+    "zh": "网站方案",
+    "ja": "サイトプラン",
+    "ru": "План сайта",
+    "ko": "사이트 계획"
+  },
+  "landing_demo_plan_pages": {
+    "en": "Home, Menu, Book a table, Contact",
+    "vi": "Trang chủ, Thực đơn, Đặt bàn, Liên hệ",
+    "zh": "首页、菜单、订座、联系我们",
+    "ja": "ホーム、メニュー、席の予約、お問い合わせ",
+    "ru": "Главная, Меню, Бронь столика, Контакты",
+    "ko": "홈, 메뉴, 자리 예약, 연락처"
+  },
+  "landing_demo_open": {
+    "en": "Open",
+    "vi": "Mở",
+    "zh": "打开",
+    "ja": "開く",
+    "ru": "Открыть",
+    "ko": "열기"
+  },
+  "landing_demo_option_build": {
+    "en": "Looks good, build it",
+    "vi": "Ổn rồi, làm thôi",
+    "zh": "不错，开始做吧",
+    "ja": "いいね、作って",
+    "ru": "Отлично, делай",
+    "ko": "좋아요, 만들어 주세요"
+  },
+  "landing_demo_option_tweak": {
+    "en": "Change something",
+    "vi": "Sửa chút đã",
+    "zh": "改一点",
+    "ja": "少し変えたい",
+    "ru": "Кое-что поменять",
+    "ko": "조금 바꿀래요"
+  },
+  "landing_demo_agent_building": {
+    "en": "On it! Sit back while I build your site.",
+    "vi": "Bắt tay vào làm ngay! Bạn cứ thư giãn nhé.",
+    "zh": "马上开始！你先歇会儿，我来搭建。",
+    "ja": "おまかせください！くつろいでお待ちください。",
+    "ru": "Уже делаю! Отдохните, пока я собираю сайт.",
+    "ko": "바로 시작할게요! 편하게 기다려 주세요."
+  },
+  "landing_demo_task_pages": {
+    "en": "Laying out the pages",
+    "vi": "Sắp xếp các trang",
+    "zh": "排版各个页面",
+    "ja": "ページを組み立て中",
+    "ru": "Раскладываю страницы",
+    "ko": "페이지 배치하기"
+  },
+  "landing_demo_task_style": {
+    "en": "Picking colors and fonts",
+    "vi": "Chọn màu sắc và phông chữ",
+    "zh": "挑选颜色和字体",
+    "ja": "色とフォントを選択",
+    "ru": "Подбираю цвета и шрифты",
+    "ko": "색상과 글꼴 고르기"
+  },
+  "landing_demo_task_booking": {
+    "en": "Setting up table bookings",
+    "vi": "Thiết lập đặt bàn",
+    "zh": "设置订座功能",
+    "ja": "席の予約を設定",
+    "ru": "Настраиваю бронирование",
+    "ko": "자리 예약 설정하기"
+  },
+  "landing_demo_task_test": {
+    "en": "Testing every page",
+    "vi": "Kiểm tra từng trang",
+    "zh": "测试每个页面",
+    "ja": "全ページをテスト",
+    "ru": "Проверяю каждую страницу",
+    "ko": "모든 페이지 테스트하기"
+  },
+  "landing_demo_working": {
+    "en": "Working",
+    "vi": "Đang làm",
+    "zh": "进行中",
+    "ja": "作業中",
+    "ru": "В работе",
+    "ko": "작업 중"
+  },
+  "landing_demo_done": {
+    "en": "Done",
+    "vi": "Xong",
+    "zh": "完成",
+    "ja": "完了",
+    "ru": "Готово",
+    "ko": "완료"
+  },
+  "landing_demo_preview": {
+    "en": "Preview",
+    "vi": "Xem trước",
+    "zh": "预览",
+    "ja": "プレビュー",
+    "ru": "Предпросмотр",
+    "ko": "미리보기"
+  },
+  "landing_demo_agent_ready": {
+    "en": "Your site is ready! Shall I put it online at {{domain}}?",
+    "vi": "Website đã xong! Mình đưa lên mạng tại {{domain}} nhé?",
+    "zh": "网站做好了！要我把它发布到 {{domain}} 吗？",
+    "ja": "サイトが完成しました！{{domain}} で公開しましょうか？",
+    "ru": "Сайт готов! Запустить его по адресу {{domain}}?",
+    "ko": "사이트가 완성됐어요! {{domain}} 주소로 공개할까요?"
+  },
+  "landing_demo_option_golive": {
+    "en": "Go live",
+    "vi": "Đưa lên mạng",
+    "zh": "发布上线",
+    "ja": "公開する",
+    "ru": "Запустить",
+    "ko": "공개하기"
+  },
+  "landing_demo_option_later": {
+    "en": "Not yet",
+    "vi": "Để sau",
+    "zh": "先不用",
+    "ja": "まだ",
+    "ru": "Пока нет",
+    "ko": "아직이요"
+  },
+  "landing_demo_agent_live": {
+    "en": "You're live! Share {{domain}} with your guests.",
+    "vi": "Website đã lên mạng! Gửi {{domain}} cho khách của bạn nhé.",
+    "zh": "已经上线了！把 {{domain}} 分享给你的客人吧。",
+    "ja": "公開しました！{{domain}} をお客さんに伝えましょう。",
+    "ru": "Сайт работает! Поделитесь адресом {{domain}} с гостями.",
+    "ko": "공개됐어요! 손님들에게 {{domain}} 주소를 알려 주세요."
+  },
   "landing_example_domain_cafe": {
     "en": "yourcafe.com",
     "vi": "cafecuaban.vn",
@@ -1065,22 +1297,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Без техно-жаргона",
     "ko": "어려운 용어 없이"
   },
-  "landing_scene_agent_msg": {
-    "en": "Love it! When someone books, should they pay a deposit?",
-    "vi": "Tuyệt quá! Khi đặt xe, khách có cần đặt cọc trước không?",
-    "zh": "好主意！顾客预订时需要付定金吗？",
-    "ja": "いいですね！予約のとき、デポジットは払ってもらいますか？",
-    "ru": "Отлично! А при бронировании нужен залог?",
-    "ko": "좋아요! 예약할 때 보증금을 받을까요?"
-  },
-  "landing_scene_chat_title": {
-    "en": "Chat with Biveit",
-    "vi": "Trò chuyện với Biveit",
-    "zh": "和 Biveit 聊聊",
-    "ja": "Biveit とチャット",
-    "ru": "Чат с Biveit",
-    "ko": "Biveit와 채팅"
-  },
   "landing_scene_live": {
     "en": "Live",
     "vi": "Đang hoạt động",
@@ -1089,14 +1305,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Онлайн",
     "ko": "라이브"
   },
-  "landing_scene_option_no": {
-    "en": "No, pay at pickup",
-    "vi": "Không, trả khi nhận xe",
-    "zh": "不用，取车时付",
-    "ja": "いいえ、受け取り時に払う",
-    "ru": "Нет, оплата при получении",
-    "ko": "아니요, 픽업 때 결제"
-  },
   "landing_scene_option_unsure": {
     "en": "Not sure yet",
     "vi": "Mình chưa chắc",
@@ -1104,22 +1312,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ja": "まだ決めていない",
     "ru": "Пока не знаю",
     "ko": "아직 모르겠어요"
-  },
-  "landing_scene_option_yes": {
-    "en": "Yes, 20% upfront",
-    "vi": "Có, cọc trước 20%",
-    "zh": "要，先付 20%",
-    "ja": "はい、20% を前払い",
-    "ru": "Да, 20% заранее",
-    "ko": "네, 20% 선결제"
-  },
-  "landing_scene_user_msg": {
-    "en": "I rent out motorbikes in Da Nang. Tourists should be able to book one online.",
-    "vi": "Mình cho thuê xe máy ở Đà Nẵng, muốn khách du lịch có thể đặt xe online.",
-    "zh": "我在岘港出租摩托车，想让游客能在网上预订。",
-    "ja": "ダナンでバイクのレンタルをしています。観光客がオンラインで予約できるようにしたいです。",
-    "ru": "Я сдаю мотобайки в Дананге. Хочу, чтобы туристы могли бронировать онлайн.",
-    "ko": "다낭에서 오토바이 렌탈을 해요. 여행객이 온라인으로 예약할 수 있으면 좋겠어요."
   },
   "landing_showcase_eyebrow": {
     "en": "Ideas",

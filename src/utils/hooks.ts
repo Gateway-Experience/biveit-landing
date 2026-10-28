@@ -105,7 +105,23 @@ function useHasBeenInView<T extends HTMLElement>(options: { bottomOffset?: strin
   return [setElement, hasBeenInView] as const;
 }
 
-type TypewriterState = { phraseIndex: number; typedLength: number; mode: 'typing' | 'pausing' | 'deleting' };
+// Whether any of the element is on screen right now, kept live (false until it's measured). Pass the returned
+// callback as the element's `ref`. For things that should only run while they can be seen, like animations.
+function useIsInView<T extends HTMLElement>() {
+  const [isInView, setIsInView] = useState(false);
+  const [element, setElement] = useState<T | null>(null);
+  useEffect(() => {
+    if (!element) {
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => setIsInView(Boolean(entry?.isIntersecting)));
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [element]);
+  return [setElement, isInView] as const;
+}
+
+type TypewriterState ={ phraseIndex: number; typedLength: number; mode: 'typing' | 'pausing' | 'deleting' };
 
 const TYPEWRITER_TIMING = { typeMs: 55, deleteMs: 28, pauseMs: 1800, beforeNextMs: 300 };
 
@@ -174,5 +190,6 @@ export {
   useElementSize,
   useScrollProgress,
   useHasBeenInView,
+  useIsInView,
   useTypewriter,
 };
