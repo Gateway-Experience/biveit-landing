@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 
 import {
-  BoutiqueSite, CafeSite, HotelSite, LakeHouseSite, MotoRentalSite, PerfumeSite,
+  BoutiqueSite, CafeSite, HotelSite, MotoRentalSite, PerfumeSite, TuViThanSoSite,
 } from 'src/components/pages/landing/ExampleSites';
 import PerfumeBottleIcon from 'src/components/pages/landing/PerfumeBottleIcon';
 import type { ArtIcon } from 'src/types/landing';
@@ -72,11 +72,12 @@ const OUR_TASKS: { id: string; labelKey: string; Icon: ArtIcon }[] = [
   { id: 'launch', labelKey: 'landing_deal_ours_launch', Icon: RocketIcon },
 ];
 
-// Made-up example sites, each a different kind of business with its own look. The addresses are
-// translated and deliberately read as placeholders ("your…") so nobody mistakes them for real sites.
+// Example sites, each a different kind of business with its own look. The first is a real site (a snapshot of
+// tuvithanso.org, under its real address); the rest are made up, and their addresses are translated and
+// deliberately read as placeholders ("your…") so nobody mistakes them for real sites.
 const SHOWCASE_SITES: { id: string; domainKey: string; typeKey: string; descKey: string; Site: () => React.ReactNode }[] = [
+  { id: 'tuvi', domainKey: 'landing_example_domain_tuvi', typeKey: 'landing_biz_astrology', descKey: 'landing_site_tuvi_desc', Site: TuViThanSoSite },
   { id: 'moto', domainKey: 'landing_example_domain_moto', typeKey: 'landing_biz_motorbike', descKey: 'landing_site_moto_desc', Site: MotoRentalSite },
-  { id: 'house', domainKey: 'landing_example_domain_house', typeKey: 'landing_biz_house', descKey: 'landing_site_house_desc', Site: LakeHouseSite },
   { id: 'hotel', domainKey: 'landing_example_domain_hotel', typeKey: 'landing_biz_hotel', descKey: 'landing_site_hotel_desc', Site: HotelSite },
   { id: 'clothes', domainKey: 'landing_example_domain_clothes', typeKey: 'landing_biz_clothes', descKey: 'landing_site_clothes_desc', Site: BoutiqueSite },
   { id: 'perfume', domainKey: 'landing_example_domain_perfume', typeKey: 'landing_biz_perfume', descKey: 'landing_site_perfume_desc', Site: PerfumeSite },

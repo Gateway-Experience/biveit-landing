@@ -33,6 +33,30 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Сделай портфолио для моих фотографий.",
     "ko": "사진 포트폴리오 사이트를 만들어 줘."
   },
+  "landing_biz_astrology": {
+    "en": "Astrology & numerology",
+    "vi": "Tử vi & thần số học",
+    "zh": "紫微斗数 & 数字命理",
+    "ja": "占星術 & 数秘術",
+    "ru": "Астрология и нумерология",
+    "ko": "점성술 & 수비학"
+  },
+  "landing_example_domain_tuvi": {
+    "en": "tuvithanso.org",
+    "vi": "tuvithanso.org",
+    "zh": "tuvithanso.org",
+    "ja": "tuvithanso.org",
+    "ru": "tuvithanso.org",
+    "ko": "tuvithanso.org"
+  },
+  "landing_site_tuvi_desc": {
+    "en": "Enter your birth date and time, get your astrology chart.",
+    "vi": "Nhập ngày giờ sinh, lập lá số tử vi ngay.",
+    "zh": "输入出生日期和时间，排出你的紫微命盘。",
+    "ja": "生年月日と時刻を入れて、命盤を作成。",
+    "ru": "Введите дату и время рождения и получите свой гороскоп.",
+    "ko": "생년월일과 태어난 시간을 넣고 명반을 받아요."
+  },
   "terms_title": {
     "en": "Terms of Service",
     "vi": "Điều khoản dịch vụ",
@@ -689,14 +713,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "yourhotel.com",
     "ko": "yourhotel.com"
   },
-  "landing_example_domain_house": {
-    "en": "yourhomestay.com",
-    "vi": "homestaycuaban.vn",
-    "zh": "yourhomestay.com",
-    "ja": "yourhomestay.com",
-    "ru": "yourhomestay.com",
-    "ko": "yourhomestay.com"
-  },
   "landing_example_domain_moto": {
     "en": "yourbikerental.com",
     "vi": "thuexecuaban.vn",
@@ -1041,30 +1057,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Гости",
     "ko": "인원"
   },
-  "landing_mock_home_available": {
-    "en": "Available this week",
-    "vi": "Còn trống tuần này",
-    "zh": "本周可订",
-    "ja": "今週空きあり",
-    "ru": "Свободен на этой неделе",
-    "ko": "이번 주 예약 가능"
-  },
-  "landing_mock_home_cta": {
-    "en": "Book your stay",
-    "vi": "Đặt phòng",
-    "zh": "预订入住",
-    "ja": "宿泊を予約",
-    "ru": "Забронировать",
-    "ko": "숙박 예약하기"
-  },
-  "landing_mock_home_title": {
-    "en": "A quiet house by the lake",
-    "vi": "Ngôi nhà yên bình bên hồ",
-    "zh": "湖边的静谧小屋",
-    "ja": "湖のほとりの静かな家",
-    "ru": "Тихий дом у озера",
-    "ko": "호숫가의 조용한 집"
-  },
   "landing_mock_hotel_title": {
     "en": "Stay in the heart of Hội An",
     "vi": "Nghỉ dưỡng giữa lòng Hội An",
@@ -1144,14 +1136,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ja": "客室",
     "ru": "Номера",
     "ko": "객실"
-  },
-  "landing_mock_per_night": {
-    "en": "/night",
-    "vi": "/đêm",
-    "zh": "/晚",
-    "ja": "/泊",
-    "ru": "/ночь",
-    "ko": "/박"
   },
   "landing_mock_perfume_title": {
     "en": "Find your signature scent",
@@ -1360,14 +1344,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ja": "部屋を比べて、数タップで予約。",
     "ru": "Сравните номера и забронируйте в пару касаний.",
     "ko": "객실을 비교하고 몇 번의 탭으로 숙박을 예약해요."
-  },
-  "landing_site_house_desc": {
-    "en": "See the house, check free dates, message the host.",
-    "vi": "Xem nhà, kiểm tra ngày trống, nhắn tin cho chủ nhà.",
-    "zh": "看房、查空档，直接联系房东。",
-    "ja": "家を見て、空き日を確認して、ホストに連絡。",
-    "ru": "Посмотрите дом, проверьте свободные даты, напишите хозяину.",
-    "ko": "집을 둘러보고, 빈 날짜를 확인하고, 호스트에게 메시지를 보내요."
   },
   "landing_site_moto_desc": {
     "en": "Pick a bike, choose dates, book with a deposit.",

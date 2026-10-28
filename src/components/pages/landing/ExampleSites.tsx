@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import {
-  BedDoubleIcon, CalendarIcon, CoffeeIcon, HeartIcon, HouseIcon, MapPinIcon, MotorbikeIcon, SearchIcon,
-  ShirtIcon, ShoppingBagIcon, StarIcon, UsersIcon, WavesIcon,
+  BedDoubleIcon, CalendarIcon, CoffeeIcon, HeartIcon, MotorbikeIcon, SearchIcon, ShirtIcon, ShoppingBagIcon,
+  StarIcon, UsersIcon,
 } from 'lucide-react';
 import { cn } from 'cn';
 
+import tuViThanSoSnapshot from 'src/assets/showcase/tuvithanso.webp';
 import PerfumeBottleIcon from 'src/components/pages/landing/PerfumeBottleIcon';
 
-// Intentions: the made-up customer sites shown in the landing page's "Ideas" section. Each one is a
+// Intentions: the customer sites shown in the landing page's "Ideas" section, all made up except for
+// TuViThanSoSite (a snapshot of a real one). Each made-up one is a
 // small but believable home page with its own layout and brand colors (the `--site-*` tokens), so the
 // grid reads like a portfolio of different real sites rather than one template repeated. They're all
 // drawn on a 640x400 canvas; the caller scales them down with ScaledFrame.
@@ -92,59 +94,10 @@ function MotoRentalSite() {
   );
 }
 
-function LakeHouseSite() {
-  const { t } = useTranslation();
-  // A week of the availability calendar; `isBooked` days get struck through.
-  const days = [
-    { id: 'mon', date: 12, isBooked: false },
-    { id: 'tue', date: 13, isBooked: true },
-    { id: 'wed', date: 14, isBooked: true },
-    { id: 'thu', date: 15, isBooked: false },
-    { id: 'fri', date: 16, isBooked: false },
-    { id: 'sat', date: 17, isBooked: true },
-    { id: 'sun', date: 18, isBooked: false },
-  ];
-  return (
-    <div className='flex size-full flex-col bg-site-home-soft text-foreground'>
-      {/* Full-bleed "photo" hero: dusk sky over the lake, with the nav and title on top */}
-      <div className='relative h-[230px] overflow-hidden bg-[linear-gradient(to_bottom,var(--site-home-soft),var(--site-home)_75%)] text-card'>
-        <div className='absolute inset-x-0 bottom-0 h-20 bg-site-home' />
-        <WavesIcon className='absolute bottom-3 left-[42%] size-14 text-card/40' />
-        <HouseIcon className='absolute right-16 bottom-14 size-24 text-card/85' strokeWidth={1.25} />
-        <SiteNav
-          brand={<span className='tracking-wide text-site-home'>Little Lake House</span>}
-          linkKeys={['landing_mock_nav_rooms', 'landing_mock_nav_gallery', 'landing_laptop_nav_contact']}
-          className='relative text-site-home'
-        />
-        <div className='relative px-7 pt-6'>
-          <p className='max-w-[300px] font-heading text-[30px] leading-[1.05] font-bold'>{t('landing_mock_home_title')}</p>
-          <p className='mt-2 flex items-center gap-1 text-[11px] opacity-90'><MapPinIcon className='size-3' />Đà Lạt</p>
-        </div>
-      </div>
-      <div className='flex flex-1 items-center gap-5 px-7'>
-        <div className='flex-1'>
-          <p className='text-[11px] font-semibold text-site-home'>{t('landing_mock_home_available')}</p>
-          <div className='mt-2 grid grid-cols-7 gap-1.5'>
-            {days.map(day => (
-              <span
-                key={day.id}
-                className={cn(
-                  'grid h-9 place-items-center rounded-lg text-[12px] font-semibold',
-                  day.isBooked ? 'bg-card/60 text-muted-foreground line-through' : 'bg-card text-site-home shadow-sm',
-                )}
-              >
-                {day.date}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className='rounded-xl bg-card p-3 text-center shadow-sm'>
-          <p className='font-heading text-[18px] font-bold'>850k<span className='text-[11px] font-normal text-muted-foreground'>{t('landing_mock_per_night')}</span></p>
-          <span className='mt-1.5 block rounded-full bg-site-home px-3 py-1.5 text-[11px] font-semibold text-card'>{t('landing_mock_home_cta')}</span>
-        </div>
-      </div>
-    </div>
-  );
+// A real site rather than a made-up one: a snapshot of tuvithanso.org's home page (a Vietnamese astrology and
+// numerology site), taken at 1280x800 so it stays sharp on the 640x400 canvas.
+function TuViThanSoSite() {
+  return <img src={tuViThanSoSnapshot.src} alt='' width={1280} height={800} loading='lazy' decoding='async' className='size-full object-cover object-top' />;
 }
 
 function HotelSite() {
@@ -334,7 +287,7 @@ function CafeSite() {
 
 export {
   MotoRentalSite,
-  LakeHouseSite,
+  TuViThanSoSite,
   HotelSite,
   BoutiqueSite,
   PerfumeSite,
