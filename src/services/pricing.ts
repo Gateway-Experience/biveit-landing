@@ -14,13 +14,13 @@ function formatUsd(amount: number, language?: string) {
 //   oneTimePrice  the one-time price (the site's code)
 //   monthlyPrice  the monthly subscription
 //   yearlyPrice   the yearly subscription
-//   domainLimit   on yearly, domains costing less than this are free
+//   domainCredit  on yearly, how much of the domain's price we cover
 function getPriceLabels(language?: string) {
   return {
     oneTimePrice: formatUsd(PRICING.oneTimePrice, language),
     monthlyPrice: formatUsd(PRICING.monthlyPrice, language),
     yearlyPrice: formatUsd(PRICING.yearlyPrice, language),
-    domainLimit: formatUsd(PRICING.freeDomainBelow, language),
+    domainCredit: formatUsd(PRICING.yearlyDomainCredit, language),
   };
 }
 

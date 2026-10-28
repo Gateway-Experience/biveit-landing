@@ -23,12 +23,12 @@ const DEFAULT_LANGUAGE: LanguageCode = 'en';
 //   oneTimePrice     pay once: the site's code to host yourself, plus the AI assistant for a month
 //   monthlyPrice     subscription, billed monthly: we host and deploy it, the AI assistant stays on
 //   yearlyPrice      the same subscription, billed yearly
-//   freeDomainBelow  on the yearly plan, a domain costing less than this is free
+//   yearlyDomainCredit  on the yearly plan, how much of the domain's price we cover
 const PRICING = {
   oneTimePrice: 19,
   monthlyPrice: 19,
   yearlyPrice: 159,
-  freeDomainBelow: 20,
+  yearlyDomainCredit: 20,
 };
 
 // The query param that carries a site idea into the app's new-project form (/projects?idea=...: the app opens the
