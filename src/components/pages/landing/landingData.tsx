@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 
 import {
-  BoutiqueSite, CafeSite, HotelSite, MotoRentalSite, PerfumeSite, TuViThanSoSite,
+  BoutiqueSite, CafeSite, FourPixieGamesSite, HotelSite, MotoRentalSite, PerfumeSite, TuViThanSoSite,
 } from 'src/components/pages/landing/ExampleSites';
 import PerfumeBottleIcon from 'src/components/pages/landing/PerfumeBottleIcon';
 import type { ArtIcon } from 'src/types/landing';
@@ -21,7 +21,7 @@ const LANDING_WIDTH_CLASS = 'mx-auto w-full max-w-6xl px-4 sm:px-6';
 const BRAND_BUTTON_CLASS = 'bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary hover:brightness-95';
 
 // One gap between sections, everywhere. Each section pads only its bottom, so the gap above a section is the
-// one its neighbour leaves (two paddings back to back would double it). References: ShowcaseZoom.
+// one its neighbour leaves (two paddings back to back would double it). References: ShowcaseCarousel.
 const SECTION_PAD_BOTTOM_CLASS = 'pb-14 sm:pb-20';
 
 // The brand lime is too pale to be text on the light page, so emphasised words keep the text colour and get
@@ -72,11 +72,12 @@ const OUR_TASKS: { id: string; labelKey: string; Icon: ArtIcon }[] = [
   { id: 'launch', labelKey: 'landing_deal_ours_launch', Icon: RocketIcon },
 ];
 
-// Example sites, each a different kind of business with its own look. The first is a real site (a snapshot of
-// tuvithanso.org, under its real address); the rest are made up, and their addresses are translated and
+// Example sites, each a different kind of business with its own look. The first two are real sites (snapshots of
+// tuvithanso.org and 4pixiegames.com, under their real addresses); the rest are made up, and their addresses are translated and
 // deliberately read as placeholders ("your…") so nobody mistakes them for real sites.
 const SHOWCASE_SITES: { id: string; domainKey: string; typeKey: string; descKey: string; Site: () => React.ReactNode }[] = [
   { id: 'tuvi', domainKey: 'landing_example_domain_tuvi', typeKey: 'landing_biz_astrology', descKey: 'landing_site_tuvi_desc', Site: TuViThanSoSite },
+  { id: 'pixie', domainKey: 'landing_example_domain_pixie', typeKey: 'landing_biz_games', descKey: 'landing_site_pixie_desc', Site: FourPixieGamesSite },
   { id: 'moto', domainKey: 'landing_example_domain_moto', typeKey: 'landing_biz_motorbike', descKey: 'landing_site_moto_desc', Site: MotoRentalSite },
   { id: 'hotel', domainKey: 'landing_example_domain_hotel', typeKey: 'landing_biz_hotel', descKey: 'landing_site_hotel_desc', Site: HotelSite },
   { id: 'clothes', domainKey: 'landing_example_domain_clothes', typeKey: 'landing_biz_clothes', descKey: 'landing_site_clothes_desc', Site: BoutiqueSite },
@@ -84,8 +85,12 @@ const SHOWCASE_SITES: { id: string; domainKey: string; typeKey: string; descKey:
   { id: 'cafe', domainKey: 'landing_example_domain_cafe', typeKey: 'landing_biz_cafe', descKey: 'landing_site_cafe_desc', Site: CafeSite },
 ];
 
-// The hero's big browser cycles through these (the rest still show in the gallery further down).
+// The hero's big browser cycles through these.
 const HERO_SITE_IDS = ['moto', 'hotel', 'cafe', 'clothes'];
+
+// The "Ideas" carousel further down shows these, in this order: the two real sites first, then the made-up one the
+// hero doesn't already show, and the hotel to make four.
+const GALLERY_SITE_IDS = ['tuvi', 'pixie', 'perfume', 'hotel'];
 
 const COMPARE_ROWS = [
   { id: 'time', usualKey: 'landing_compare_time_usual', vib3Key: 'landing_compare_time_vib3' },
@@ -116,6 +121,7 @@ export {
   OUR_TASKS,
   SHOWCASE_SITES,
   HERO_SITE_IDS,
+  GALLERY_SITE_IDS,
   COMPARE_ROWS,
   FAQS,
 };

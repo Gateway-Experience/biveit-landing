@@ -5,11 +5,12 @@ import {
 } from 'lucide-react';
 import { cn } from 'cn';
 
+import fourPixieGamesSnapshot from 'src/assets/showcase/4pixiegames.webp';
 import tuViThanSoSnapshot from 'src/assets/showcase/tuvithanso.webp';
 import PerfumeBottleIcon from 'src/components/pages/landing/PerfumeBottleIcon';
 
 // Intentions: the customer sites shown in the landing page's "Ideas" section, all made up except for
-// TuViThanSoSite (a snapshot of a real one). Each made-up one is a
+// TuViThanSoSite and FourPixieGamesSite (snapshots of real ones). Each made-up one is a
 // small but believable home page with its own layout and brand colors (the `--site-*` tokens), so the
 // grid reads like a portfolio of different real sites rather than one template repeated. They're all
 // drawn on a 640x400 canvas; the caller scales them down with ScaledFrame.
@@ -98,6 +99,12 @@ function MotoRentalSite() {
 // numerology site), taken at 1280x800 so it stays sharp on the 640x400 canvas.
 function TuViThanSoSite() {
   return <img src={tuViThanSoSnapshot.src} alt='' width={1280} height={800} loading='lazy' decoding='async' className='size-full object-cover object-top' />;
+}
+
+// Also real: a snapshot of 4pixiegames.com's home page (a studio that turns a one-line idea into a mobile game),
+// taken the same way.
+function FourPixieGamesSite() {
+  return <img src={fourPixieGamesSnapshot.src} alt='' width={1280} height={800} loading='lazy' decoding='async' className='size-full object-cover object-top' />;
 }
 
 function HotelSite() {
@@ -288,6 +295,7 @@ function CafeSite() {
 export {
   MotoRentalSite,
   TuViThanSoSite,
+  FourPixieGamesSite,
   HotelSite,
   BoutiqueSite,
   PerfumeSite,

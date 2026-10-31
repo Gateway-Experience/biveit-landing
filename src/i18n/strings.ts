@@ -41,6 +41,30 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Астрология и нумерология",
     "ko": "점성술 & 수비학"
   },
+  "landing_biz_games": {
+    "en": "Mobile game studio",
+    "vi": "Studio game di động",
+    "zh": "手游工作室",
+    "ja": "モバイルゲームスタジオ",
+    "ru": "Студия мобильных игр",
+    "ko": "모바일 게임 스튜디오"
+  },
+  "landing_example_domain_pixie": {
+    "en": "4pixiegames.com",
+    "vi": "4pixiegames.com",
+    "zh": "4pixiegames.com",
+    "ja": "4pixiegames.com",
+    "ru": "4pixiegames.com",
+    "ko": "4pixiegames.com"
+  },
+  "landing_site_pixie_desc": {
+    "en": "Describe a game in a sentence, get it built and published.",
+    "vi": "Mô tả trò chơi trong một câu, nhận game hoàn chỉnh và lên chợ ứng dụng.",
+    "zh": "用一句话描述游戏，就能做好并上架。",
+    "ja": "ゲームを一文で伝えるだけで、制作から公開まで。",
+    "ru": "Опишите игру одной фразой, и её сделают и опубликуют.",
+    "ko": "게임을 한 문장으로 설명하면 만들어서 출시까지 해 줘요."
+  },
   "landing_example_domain_tuvi": {
     "en": "tuvithanso.org",
     "vi": "tuvithanso.org",

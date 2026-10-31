@@ -15,6 +15,16 @@
   }
 }
 
+/* The "Ideas" row sliding endlessly to the left (ShowcaseCarousel), by --marquee-shift (one copy of its list)
+   per loop. The duration is set where it's used, from how many sites there are. */
+@theme {
+  --animate-marquee: marquee 44s linear infinite;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(var(--marquee-shift, -50%)); }
+  }
+}
+
 @theme inline {
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);

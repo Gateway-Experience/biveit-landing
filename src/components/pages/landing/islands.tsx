@@ -10,9 +10,9 @@ import HeroPrompt from 'src/components/pages/landing/HeroPrompt';
 import HeroShowcase from 'src/components/pages/landing/HeroShowcase';
 import HowItWorks from 'src/components/pages/landing/HowItWorks';
 import { SectionHeading } from 'src/components/pages/landing/LandingSections';
-import ShowcaseZoom from 'src/components/pages/landing/ShowcaseZoom';
+import ShowcaseCarousel from 'src/components/pages/landing/ShowcaseCarousel';
 import {
-  BRAND_BUTTON_CLASS, BUSINESSES, HERO_SITE_IDS, SHOWCASE_SITES,
+  BRAND_BUTTON_CLASS, BUSINESSES, GALLERY_SITE_IDS, HERO_SITE_IDS, SHOWCASE_SITES,
 } from 'src/components/pages/landing/landingData';
 import { withLanguage } from 'src/i18n/i18n';
 import { APP_START_URL } from 'src/utils/appUrls';
@@ -33,8 +33,8 @@ function BusinessOrbitWithBusinesses() {
 function ShowcaseWithSites() {
   const { t } = useTranslation();
   return (
-    <ShowcaseZoom
-      sites={SHOWCASE_SITES}
+    <ShowcaseCarousel
+      sites={_.compact(_.map(GALLERY_SITE_IDS, id => _.find(SHOWCASE_SITES, { id })))}
       heading={<SectionHeading eyebrow={t('landing_showcase_eyebrow')} title={t('landing_showcase_title')} subtitle={t('landing_showcase_subtitle')} />}
       footer={(
         <Reveal className='mt-12 flex justify-center'>
