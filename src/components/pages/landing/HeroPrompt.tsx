@@ -5,6 +5,7 @@ import { ArrowUpIcon } from 'lucide-react';
 import { cn } from 'cn';
 
 import { buildLoginWithIdeaUrl } from 'src/utils/appUrls';
+import { withArrivalSource } from 'src/utils/arrivalSource';
 import { EXAMPLE_IDEA_KEYS } from 'src/utils/constants';
 import { useTypewriter } from 'src/utils/hooks';
 
@@ -36,7 +37,7 @@ export default function HeroPrompt({ className }: { className?: string }) {
     if (!trimmedIdea) {
       return;
     }
-    window.location.assign(buildLoginWithIdeaUrl(trimmedIdea));
+    window.location.assign(withArrivalSource(buildLoginWithIdeaUrl(trimmedIdea)));
   };
 
   return (

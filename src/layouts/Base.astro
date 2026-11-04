@@ -98,7 +98,21 @@ const PRELOAD_FONTS: Record<LanguageCode, string[]> = {
 
 <script>
   import 'src/scripts/reveal'
-  import { API_ME_URL, APP_START_URL } from 'src/utils/appUrls'
+  import { API_ME_URL, APP_START_URL, APP_URL } from 'src/utils/appUrls'
+  import { rememberArrivalSource, withArrivalSource } from 'src/utils/arrivalSource'
+
+  // Intentions: carry where the visitor came from over to the app (see utils/arrivalSource). Every link into the
+  // app gets it added right as it's followed -- by a plain click, a middle-click or a ctrl-click, whichever page
+  // or island drew it -- rather than each link building it in. Capture phase, so it's in before the browser acts.
+  rememberArrivalSource()
+  const addArrivalSourceToAppLink = (event: MouseEvent) => {
+    const link = (event.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null
+    if (link && APP_URL && link.href.startsWith(APP_URL)) {
+      link.href = withArrivalSource(link.href)
+    }
+  }
+  document.addEventListener('click', addArrivalSourceToAppLink, true)
+  document.addEventListener('auxclick', addArrivalSourceToAppLink, true)
 
   // Intentions: the backup for the marker check at the top of <head>, for sessions that don't have the marker
   // yet (signed in before it existed). We ask the API who this is and send a real (non-guest) user into the

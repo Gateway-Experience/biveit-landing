@@ -24,6 +24,7 @@ function buildLoginWithIdeaUrl(idea: string) {
 }
 
 export {
+  APP_URL,
   APP_START_URL,
   APP_PRICING_URL,
   APP_TERMS_URL,
