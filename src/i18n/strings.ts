@@ -721,38 +721,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "yourcafe.com",
     "ko": "yourcafe.com"
   },
-  "landing_example_domain_clothes": {
-    "en": "yourboutique.shop",
-    "vi": "thoitrangcuaban.vn",
-    "zh": "yourboutique.shop",
-    "ja": "yourboutique.shop",
-    "ru": "yourboutique.shop",
-    "ko": "yourboutique.shop"
-  },
-  "landing_example_domain_hotel": {
-    "en": "yourhotel.com",
-    "vi": "khachsancuaban.vn",
-    "zh": "yourhotel.com",
-    "ja": "yourhotel.com",
-    "ru": "yourhotel.com",
-    "ko": "yourhotel.com"
-  },
-  "landing_example_domain_moto": {
-    "en": "yourbikerental.com",
-    "vi": "thuexecuaban.vn",
-    "zh": "yourbikerental.com",
-    "ja": "yourbikerental.com",
-    "ru": "yourbikerental.com",
-    "ko": "yourbikerental.com"
-  },
-  "landing_example_domain_perfume": {
-    "en": "yourperfumeshop.com",
-    "vi": "nuochoacuaban.vn",
-    "zh": "yourperfumeshop.com",
-    "ja": "yourperfumeshop.com",
-    "ru": "yourperfumeshop.com",
-    "ko": "yourperfumeshop.com"
-  },
   "landing_faq_changes_a": {
     "en": "Of course. Tell us what you'd like different in the chat and watch the site update.",
     "vi": "Tất nhiên rồi. Bạn chỉ cần nhắn điều muốn thay đổi trong khung chat và xem website được cập nhật ngay.",
@@ -929,22 +897,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "От идеи до готового сайта за три шага",
     "ko": "아이디어에서 웹사이트 오픈까지 단 3단계"
   },
-  "landing_laptop_find": {
-    "en": "Find a bike",
-    "vi": "Tìm xe",
-    "zh": "找车",
-    "ja": "バイクを探す",
-    "ru": "Найти байк",
-    "ko": "오토바이 찾기"
-  },
-  "landing_laptop_nav_bikes": {
-    "en": "Bikes",
-    "vi": "Xe",
-    "zh": "车型",
-    "ja": "バイク",
-    "ru": "Байки",
-    "ko": "오토바이"
-  },
   "landing_laptop_nav_contact": {
     "en": "Contact",
     "vi": "Liên hệ",
@@ -953,54 +905,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Контакты",
     "ko": "문의"
   },
-  "landing_laptop_nav_cta": {
-    "en": "Book now",
-    "vi": "Đặt ngay",
-    "zh": "立即预订",
-    "ja": "今すぐ予約",
-    "ru": "Забронировать",
-    "ko": "지금 예약"
-  },
-  "landing_laptop_nav_prices": {
-    "en": "Prices",
-    "vi": "Bảng giá",
-    "zh": "价格",
-    "ja": "料金",
-    "ru": "Цены",
-    "ko": "가격"
-  },
-  "landing_laptop_per_day": {
-    "en": "/day",
-    "vi": "/ngày",
-    "zh": "/天",
-    "ja": "/日",
-    "ru": "/день",
-    "ko": "/일"
-  },
-  "landing_laptop_pickup": {
-    "en": "Pick-up",
-    "vi": "Nhận xe",
-    "zh": "取车",
-    "ja": "受け取り",
-    "ru": "Получение",
-    "ko": "픽업"
-  },
-  "landing_laptop_return": {
-    "en": "Return",
-    "vi": "Trả xe",
-    "zh": "还车",
-    "ja": "返却",
-    "ru": "Возврат",
-    "ko": "반납"
-  },
-  "landing_laptop_subtitle": {
-    "en": "Well-kept scooters, delivered to your hotel. Book in under a minute.",
-    "vi": "Xe tay ga đời mới, giao tận khách sạn. Đặt xe chỉ trong một phút.",
-    "zh": "车况良好的踏板车，直接送到你的酒店。一分钟内完成预订。",
-    "ja": "整備済みのスクーターをホテルまでお届け。1 分以内で予約完了。",
-    "ru": "Ухоженные скутеры с доставкой в ваш отель. Бронирование меньше чем за минуту.",
-    "ko": "관리 잘 된 스쿠터를 호텔까지 배달해 드려요. 1분이면 예약 끝."
-  },
   "landing_made_for_title": {
     "en": "Made for whatever you run",
     "vi": "Phù hợp với mọi lĩnh vực kinh doanh",
@@ -1008,14 +912,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ja": "どんなお店にもぴったり",
     "ru": "Подходит для любого дела",
     "ko": "어떤 사업이든 딱 맞게"
-  },
-  "landing_mock_boutique_title": {
-    "en": "Summer collection",
-    "vi": "Bộ sưu tập hè",
-    "zh": "夏季系列",
-    "ja": "サマーコレクション",
-    "ru": "Летняя коллекция",
-    "ko": "여름 컬렉션"
   },
   "landing_mock_cafe_menu": {
     "en": "Today's menu",
@@ -1049,22 +945,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Кофе, ради которого стоит проснуться",
     "ko": "일어날 이유가 되는 커피"
   },
-  "landing_mock_checkin": {
-    "en": "Check-in",
-    "vi": "Nhận phòng",
-    "zh": "入住",
-    "ja": "チェックイン",
-    "ru": "Заезд",
-    "ko": "체크인"
-  },
-  "landing_mock_checkout": {
-    "en": "Check-out",
-    "vi": "Trả phòng",
-    "zh": "退房",
-    "ja": "チェックアウト",
-    "ru": "Выезд",
-    "ko": "체크아웃"
-  },
   "landing_mock_date": {
     "en": "Date",
     "vi": "Ngày",
@@ -1081,70 +961,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Гости",
     "ko": "인원"
   },
-  "landing_mock_hotel_title": {
-    "en": "Stay in the heart of Hội An",
-    "vi": "Nghỉ dưỡng giữa lòng Hội An",
-    "zh": "住在会安古城中心",
-    "ja": "ホイアンの中心に泊まる",
-    "ru": "Живите в самом сердце Хойана",
-    "ko": "호이안 한가운데서 머무르세요"
-  },
-  "landing_mock_mood_floral": {
-    "en": "Floral",
-    "vi": "Hương hoa",
-    "zh": "花香",
-    "ja": "フローラル",
-    "ru": "Цветочный",
-    "ko": "플로럴"
-  },
-  "landing_mock_mood_fresh": {
-    "en": "Fresh",
-    "vi": "Tươi mát",
-    "zh": "清新",
-    "ja": "フレッシュ",
-    "ru": "Свежий",
-    "ko": "상쾌한"
-  },
-  "landing_mock_mood_sweet": {
-    "en": "Sweet",
-    "vi": "Ngọt ngào",
-    "zh": "甜美",
-    "ja": "スイート",
-    "ru": "Сладкий",
-    "ko": "달콤한"
-  },
-  "landing_mock_mood_woody": {
-    "en": "Woody",
-    "vi": "Hương gỗ",
-    "zh": "木质",
-    "ja": "ウッディ",
-    "ru": "Древесный",
-    "ko": "우디"
-  },
-  "landing_mock_moto_from": {
-    "en": "From 100k a day",
-    "vi": "Chỉ từ 100k/ngày",
-    "zh": "每天 100k 起",
-    "ja": "1 日 100k から",
-    "ru": "От 100k в день",
-    "ko": "하루 100k부터"
-  },
-  "landing_mock_moto_title": {
-    "en": "Ride Da Nang your way",
-    "vi": "Khám phá Đà Nẵng theo cách của bạn",
-    "zh": "按你的方式畅骑岘港",
-    "ja": "ダナンを自由に走ろう",
-    "ru": "Катайтесь по Данангу по-своему",
-    "ko": "다낭을 내 맘대로 달려 보세요"
-  },
-  "landing_mock_nav_gallery": {
-    "en": "Gallery",
-    "vi": "Hình ảnh",
-    "zh": "图库",
-    "ja": "ギャラリー",
-    "ru": "Галерея",
-    "ko": "갤러리"
-  },
   "landing_mock_nav_menu": {
     "en": "Menu",
     "vi": "Thực đơn",
@@ -1152,118 +968,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ja": "メニュー",
     "ru": "Меню",
     "ko": "메뉴"
-  },
-  "landing_mock_nav_rooms": {
-    "en": "Rooms",
-    "vi": "Phòng",
-    "zh": "客房",
-    "ja": "客室",
-    "ru": "Номера",
-    "ko": "객실"
-  },
-  "landing_mock_perfume_title": {
-    "en": "Find your signature scent",
-    "vi": "Tìm mùi hương của riêng bạn",
-    "zh": "找到你的专属香氛",
-    "ja": "あなただけの香りを見つけよう",
-    "ru": "Найдите свой аромат",
-    "ko": "나만의 시그니처 향을 찾아보세요"
-  },
-  "landing_mock_product_denim": {
-    "en": "Denim jacket",
-    "vi": "Áo khoác jean",
-    "zh": "牛仔夹克",
-    "ja": "デニムジャケット",
-    "ru": "Джинсовая куртка",
-    "ko": "데님 재킷"
-  },
-  "landing_mock_product_dress": {
-    "en": "Summer dress",
-    "vi": "Váy mùa hè",
-    "zh": "夏日连衣裙",
-    "ja": "サマードレス",
-    "ru": "Летнее платье",
-    "ko": "여름 원피스"
-  },
-  "landing_mock_product_linen": {
-    "en": "Linen shirt",
-    "vi": "Áo sơ mi linen",
-    "zh": "亚麻衬衫",
-    "ja": "リネンシャツ",
-    "ru": "Льняная рубашка",
-    "ko": "린넨 셔츠"
-  },
-  "landing_mock_product_tee": {
-    "en": "Cotton tee",
-    "vi": "Áo thun cotton",
-    "zh": "纯棉 T 恤",
-    "ja": "コットンTシャツ",
-    "ru": "Хлопковая футболка",
-    "ko": "면 티셔츠"
-  },
-  "landing_mock_reviews": {
-    "en": "1,200+ reviews",
-    "vi": "hơn 1.200 đánh giá",
-    "zh": "1,200+ 条评价",
-    "ja": "1,200+ 件のレビュー",
-    "ru": "1200+ отзывов",
-    "ko": "리뷰 1,200개 이상"
-  },
-  "landing_mock_room_deluxe": {
-    "en": "Deluxe",
-    "vi": "Deluxe",
-    "zh": "豪华房",
-    "ja": "デラックス",
-    "ru": "Делюкс",
-    "ko": "디럭스"
-  },
-  "landing_mock_room_family": {
-    "en": "Family",
-    "vi": "Gia đình",
-    "zh": "家庭房",
-    "ja": "ファミリー",
-    "ru": "Семейный",
-    "ko": "패밀리"
-  },
-  "landing_mock_room_suite": {
-    "en": "Suite",
-    "vi": "Suite",
-    "zh": "套房",
-    "ja": "スイート",
-    "ru": "Люкс",
-    "ko": "스위트"
-  },
-  "landing_mock_search": {
-    "en": "Search",
-    "vi": "Tìm phòng",
-    "zh": "搜索",
-    "ja": "検索",
-    "ru": "Найти",
-    "ko": "검색"
-  },
-  "landing_mock_tab_men": {
-    "en": "Men",
-    "vi": "Nam",
-    "zh": "男装",
-    "ja": "メンズ",
-    "ru": "Мужчинам",
-    "ko": "남성"
-  },
-  "landing_mock_tab_new": {
-    "en": "New in",
-    "vi": "Hàng mới",
-    "zh": "新品",
-    "ja": "新着",
-    "ru": "Новинки",
-    "ko": "신상품"
-  },
-  "landing_mock_tab_women": {
-    "en": "Women",
-    "vi": "Nữ",
-    "zh": "女装",
-    "ja": "レディース",
-    "ru": "Женщинам",
-    "ko": "여성"
   },
   "landing_mock_time": {
     "en": "Time",
@@ -1288,6 +992,38 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ja": "ドメイン & ホスティング込み",
     "ru": "Домен и хостинг включены",
     "ko": "도메인 & 호스팅 포함"
+  },
+  "landing_pledge_no_limits": {
+    "en": "No token credit limits",
+    "vi": "Không giới hạn credit token",
+    "zh": "不限 token 额度",
+    "ja": "トークンクレジットの上限なし",
+    "ru": "Без лимитов на токены",
+    "ko": "토큰 크레딧 한도 없음"
+  },
+  "landing_pledge_no_tokens": {
+    "en": "No charge per token",
+    "vi": "Không tính phí theo token",
+    "zh": "不按 token 收费",
+    "ja": "トークン課金なし",
+    "ru": "Без оплаты за токены",
+    "ko": "토큰당 과금 없음"
+  },
+  "landing_pledge_no_upfront": {
+    "en": "No upfront fee",
+    "vi": "Không trả phí trước",
+    "zh": "无需预付费用",
+    "ja": "前払い不要",
+    "ru": "Без предоплаты",
+    "ko": "선결제 없음"
+  },
+  "landing_pledge_pay_when_happy": {
+    "en": "Pay only when you're happy",
+    "vi": "Hài lòng rồi mới trả tiền",
+    "zh": "满意了再付款",
+    "ja": "納得してからお支払い",
+    "ru": "Платите, только когда довольны",
+    "ko": "만족할 때만 결제"
   },
   "landing_perk_no_code": {
     "en": "No code",
@@ -1344,46 +1080,6 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ja": "あなたのサイトはどんな形に？",
     "ru": "Каким может быть ваш сайт?",
     "ko": "당신의 사이트는 어떤 모습일까요?"
-  },
-  "landing_site_cafe_desc": {
-    "en": "Browse the menu and reserve a table.",
-    "vi": "Xem menu và đặt bàn trước.",
-    "zh": "浏览菜单，预订座位。",
-    "ja": "メニューを見て、席を予約。",
-    "ru": "Посмотрите меню и забронируйте столик.",
-    "ko": "메뉴를 둘러보고 테이블을 예약해요."
-  },
-  "landing_site_clothes_desc": {
-    "en": "Shop by size and color, order for delivery.",
-    "vi": "Chọn theo size, màu sắc và đặt hàng giao tận nơi.",
-    "zh": "按尺码和颜色挑选，下单送货上门。",
-    "ja": "サイズと色で探して、配送で注文。",
-    "ru": "Выбирайте по размеру и цвету, заказывайте с доставкой.",
-    "ko": "사이즈와 색상별로 쇼핑하고 배송 주문해요."
-  },
-  "landing_site_hotel_desc": {
-    "en": "Compare rooms and book a stay in a few taps.",
-    "vi": "So sánh các phòng và đặt phòng chỉ với vài thao tác.",
-    "zh": "比较房型，点几下就能订好。",
-    "ja": "部屋を比べて、数タップで予約。",
-    "ru": "Сравните номера и забронируйте в пару касаний.",
-    "ko": "객실을 비교하고 몇 번의 탭으로 숙박을 예약해요."
-  },
-  "landing_site_moto_desc": {
-    "en": "Pick a bike, choose dates, book with a deposit.",
-    "vi": "Chọn xe, chọn ngày, đặt cọc giữ xe.",
-    "zh": "选车、选日期，付定金即可预订。",
-    "ja": "バイクと日付を選んで、デポジットで予約。",
-    "ru": "Выберите байк и даты, забронируйте с залогом.",
-    "ko": "오토바이를 고르고, 날짜를 정하고, 보증금으로 예약해요."
-  },
-  "landing_site_perfume_desc": {
-    "en": "Find a scent by mood, then add it to the cart.",
-    "vi": "Tìm mùi hương hợp tâm trạng rồi thêm vào giỏ hàng.",
-    "zh": "按心情找香氛，一键加入购物车。",
-    "ja": "気分で香りを探して、カートに追加。",
-    "ru": "Найдите аромат под настроение и добавьте в корзину.",
-    "ko": "기분에 맞는 향을 찾아 장바구니에 담아요."
   },
   "landing_step1_body": {
     "en": "Tell us about your business the way you'd tell a friend. We'll ask a few easy questions, and most come with ready-made answers, so you just hop from one to the next.",

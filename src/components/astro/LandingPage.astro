@@ -3,10 +3,11 @@ import Base from 'src/layouts/Base.astro'
 import Footer from 'src/components/astro/Footer.astro'
 import Header from 'src/components/astro/Header.astro'
 import {
-  DotGridBackdrop, LandingBusinessOrbit, LandingHeroPrompt, LandingHeroShowcase, LandingHowItWorks, LandingShowcase,
+  DotGridBackdrop, LandingBusinessOrbit, LandingHeroPrompt, LandingHowItWorks, LandingShowcase,
 } from 'src/components/pages/landing/islands'
 import {
-  LandingCompareSection, LandingDealSection, LandingFaqSection, LandingHeroIntro, LandingHeroPerks, LandingHowItWorksHeading,
+  HeroHorizon, HeroWaves, LandingCompareSection, LandingDealSection, LandingFaqSection, LandingHeroIntro, LandingHeroPerks, LandingHeroPledges,
+  LandingHowItWorksHeading,
 } from 'src/components/pages/landing/LandingSections'
 import { LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS } from 'src/components/pages/landing/landingData'
 import type { LanguageCode } from 'src/utils/constants'
@@ -29,24 +30,33 @@ const { lang } = Astro.props
     <DotGridBackdrop client:idle className="-z-10" />
     <Header lang={lang} />
     <main>
-      <section data-section="hero" class="relative isolate overflow-hidden">
-        <!-- Half the usual section gap on top: the header is right above. -->
-        <div class:list={[LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS, 'flex flex-col items-center pt-7 text-center sm:pt-10']}>
+      <!-- The first screen, all of it (the header's 4rem aside): the promise on a navy night sky, and the prompt box
+           where a glowing horizon rises behind it (HeroHorizon). 80px under the header (not centred, so a tall
+           screen doesn't push it down), and the badge looks 80px clear of the headline too (see HeroIntro). Its
+           own background covers the dot grid; the horizon's floor fades into the page's background at the bottom. -->
+      <section data-section="hero" class="relative isolate min-h-[calc(100svh-4rem)] overflow-hidden bg-brand-ink">
+        <div class:list={[LANDING_WIDTH_CLASS, 'flex flex-col items-center pt-20 pb-16 text-center sm:pb-20']}>
           <!-- min-w-0 lets this column shrink below its longest word, so long words wrap instead of overflowing.
                No scroll-reveal up here: it's on screen from the start, and fading it in would only delay the
                first paint (which Google counts). -->
-          <div class="flex min-w-0 flex-col items-center">
+          <div class="flex w-full min-w-0 flex-col items-center">
             <LandingHeroIntro lang={lang} />
-            <LandingHeroPrompt client:load lang={lang} className="mt-8" />
-            <LandingHeroPerks lang={lang} />
-          </div>
-          <div class="mt-14 w-full max-w-5xl">
-            <LandingHeroShowcase client:visible lang={lang} />
+            <!-- From the prompt box down: the horizon's rim lines up with the box's middle. -->
+            <div class="relative mt-8 flex w-full flex-col items-center">
+              <HeroHorizon />
+              <LandingHeroPrompt client:load lang={lang} />
+              <LandingHeroPledges lang={lang} />
+              <LandingHeroPerks lang={lang} />
+            </div>
           </div>
         </div>
+        <!-- After the content, so the waves draw over the horizon's floor. -->
+        <HeroWaves />
       </section>
 
-      <section id="how-it-works" data-section="how-it-works" class:list={[LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS, 'scroll-mt-16']}>
+      <!-- The section gap on top as well: the hero doesn't end at a visible edge, so without it the
+           heading would sit right against the hero. -->
+      <section id="how-it-works" data-section="how-it-works" class:list={[LANDING_WIDTH_CLASS, SECTION_PAD_BOTTOM_CLASS, 'scroll-mt-16 pt-14 sm:pt-20']}>
         <LandingHowItWorksHeading lang={lang} />
         <LandingHowItWorks client:visible lang={lang} className="mt-12" />
       </section>
