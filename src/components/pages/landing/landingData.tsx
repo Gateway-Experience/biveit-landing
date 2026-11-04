@@ -1,11 +1,12 @@
 import {
-  CalendarCheckIcon, CameraIcon, DatabaseIcon, DumbbellIcon, Flower2Icon, GlobeIcon, HotelIcon, HouseIcon,
-  KeyRoundIcon, LayoutTemplateIcon, LockIcon, MonitorSmartphoneIcon, MotorbikeIcon, PaletteIcon, PenToolIcon,
-  RocketIcon, ScissorsIcon, SearchCheckIcon, ServerIcon, ShirtIcon, TicketIcon, UtensilsIcon, ZapIcon,
+  CalendarCheckIcon, CameraIcon, CoinsIcon, DatabaseIcon, DumbbellIcon, Flower2Icon, GlobeIcon, HotelIcon, HouseIcon,
+  InfinityIcon, KeyRoundIcon, LayoutTemplateIcon, LockIcon, MonitorSmartphoneIcon, MotorbikeIcon, PaletteIcon,
+  PenToolIcon, RocketIcon, ScissorsIcon, SearchCheckIcon, ServerIcon, ShirtIcon, SmileIcon, TicketIcon, UtensilsIcon,
+  WalletIcon, ZapIcon,
 } from 'lucide-react';
 
 import {
-  BoutiqueSite, CafeSite, FourPixieGamesSite, HotelSite, MotoRentalSite, PerfumeSite, TuViThanSoSite,
+  FourPixieGamesSite, TuViThanSoSite,
 } from 'src/components/pages/landing/ExampleSites';
 import PerfumeBottleIcon from 'src/components/pages/landing/PerfumeBottleIcon';
 import type { ArtIcon } from 'src/types/landing';
@@ -21,16 +22,20 @@ const LANDING_WIDTH_CLASS = 'mx-auto w-full max-w-6xl px-4 sm:px-6';
 const BRAND_BUTTON_CLASS = 'bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary hover:brightness-95';
 
 // One gap between sections, everywhere. Each section pads only its bottom, so the gap above a section is the
-// one its neighbour leaves (two paddings back to back would double it). References: ShowcaseCarousel.
+// one its neighbour leaves (two paddings back to back would double it). References: ShowcaseGallery.
 const SECTION_PAD_BOTTOM_CLASS = 'pb-14 sm:pb-20';
-
-// The brand lime is too pale to be text on the light page, so emphasised words keep the text colour and get
-// a lime highlighter stroke across their lower half instead. Goes on an inline element, so the stroke follows
-// the words (wrapping included) rather than the full width.
-const BRAND_TEXT_CLASS = 'bg-[linear-gradient(transparent_52%,var(--brand-light)_52%,var(--brand-light)_88%,transparent_88%)] box-decoration-clone px-[0.08em]';
 
 // Gap between neighbouring cards fading in on scroll (see Reveal), so a row arrives one card at a time.
 const STAGGER_MS = 120;
+
+// How paying works, said right under the hero's prompt box because it's what people worry about with AI builders:
+// no metering by tokens, nothing up front, no credits running out, and paying only once they're happy.
+const HERO_PLEDGES: { id: string; labelKey: string; Icon: ArtIcon }[] = [
+  { id: 'tokens', labelKey: 'landing_pledge_no_tokens', Icon: CoinsIcon },
+  { id: 'upfront', labelKey: 'landing_pledge_no_upfront', Icon: WalletIcon },
+  { id: 'limits', labelKey: 'landing_pledge_no_limits', Icon: InfinityIcon },
+  { id: 'happy', labelKey: 'landing_pledge_pay_when_happy', Icon: SmileIcon },
+];
 
 const HERO_PERK_KEYS = ['landing_perk_no_code', 'landing_perk_no_jargon', 'landing_perk_all_included', 'landing_adv_tick_changes'];
 // The hero's second row: what the finished site is like (rather than what using biveit is like).
@@ -72,25 +77,12 @@ const OUR_TASKS: { id: string; labelKey: string; Icon: ArtIcon }[] = [
   { id: 'launch', labelKey: 'landing_deal_ours_launch', Icon: RocketIcon },
 ];
 
-// Example sites, each a different kind of business with its own look. The first two are real sites (snapshots of
-// tuvithanso.org and 4pixiegames.com, under their real addresses); the rest are made up, and their addresses are translated and
-// deliberately read as placeholders ("your…") so nobody mistakes them for real sites.
-const SHOWCASE_SITES: { id: string; domainKey: string; typeKey: string; descKey: string; Site: () => React.ReactNode }[] = [
-  { id: 'tuvi', domainKey: 'landing_example_domain_tuvi', typeKey: 'landing_biz_astrology', descKey: 'landing_site_tuvi_desc', Site: TuViThanSoSite },
-  { id: 'pixie', domainKey: 'landing_example_domain_pixie', typeKey: 'landing_biz_games', descKey: 'landing_site_pixie_desc', Site: FourPixieGamesSite },
-  { id: 'moto', domainKey: 'landing_example_domain_moto', typeKey: 'landing_biz_motorbike', descKey: 'landing_site_moto_desc', Site: MotoRentalSite },
-  { id: 'hotel', domainKey: 'landing_example_domain_hotel', typeKey: 'landing_biz_hotel', descKey: 'landing_site_hotel_desc', Site: HotelSite },
-  { id: 'clothes', domainKey: 'landing_example_domain_clothes', typeKey: 'landing_biz_clothes', descKey: 'landing_site_clothes_desc', Site: BoutiqueSite },
-  { id: 'perfume', domainKey: 'landing_example_domain_perfume', typeKey: 'landing_biz_perfume', descKey: 'landing_site_perfume_desc', Site: PerfumeSite },
-  { id: 'cafe', domainKey: 'landing_example_domain_cafe', typeKey: 'landing_biz_cafe', descKey: 'landing_site_cafe_desc', Site: CafeSite },
+// The example sites the "Ideas" section shows, in this order: two real sites (snapshots of their home pages,
+// under their real addresses). Each card links to the live site (`href`).
+const SHOWCASE_SITES: { id: string; domainKey: string; typeKey: string; descKey: string; href: string; Site: () => React.ReactNode }[] = [
+  { id: 'tuvi', domainKey: 'landing_example_domain_tuvi', typeKey: 'landing_biz_astrology', descKey: 'landing_site_tuvi_desc', href: 'https://tuvithanso.org', Site: TuViThanSoSite },
+  { id: 'pixie', domainKey: 'landing_example_domain_pixie', typeKey: 'landing_biz_games', descKey: 'landing_site_pixie_desc', href: 'https://4pixiegames.com', Site: FourPixieGamesSite },
 ];
-
-// The hero's big browser cycles through these.
-const HERO_SITE_IDS = ['moto', 'hotel', 'cafe', 'clothes'];
-
-// The "Ideas" carousel further down shows these, in this order: the two real sites first, then the made-up one the
-// hero doesn't already show, and the hotel to make four.
-const GALLERY_SITE_IDS = ['tuvi', 'pixie', 'perfume', 'hotel'];
 
 const COMPARE_ROWS = [
   { id: 'time', usualKey: 'landing_compare_time_usual', vib3Key: 'landing_compare_time_vib3' },
@@ -112,16 +104,14 @@ export {
   LANDING_WIDTH_CLASS,
   BRAND_BUTTON_CLASS,
   SECTION_PAD_BOTTOM_CLASS,
-  BRAND_TEXT_CLASS,
   STAGGER_MS,
+  HERO_PLEDGES,
   HERO_PERK_KEYS,
   HERO_QUALITIES,
   BUSINESSES,
   YOUR_TASK_KEYS,
   OUR_TASKS,
   SHOWCASE_SITES,
-  HERO_SITE_IDS,
-  GALLERY_SITE_IDS,
   COMPARE_ROWS,
   FAQS,
 };
