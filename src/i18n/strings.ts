@@ -738,12 +738,12 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ko": "나중에 수정할 수 있나요?"
   },
   "landing_faq_cost_a": {
-    "en": "Building your site is free. When it's ready, get its code for {{oneTimePrice}} once and host it yourself, or subscribe for {{monthlyPrice}} a month or {{yearlyPrice}} a year and we'll put it online for you. A domain is extra, and the yearly plan covers up to {{domainCredit}} of it.",
-    "vi": "Xây dựng website là miễn phí. Khi đã sẵn sàng, bạn có thể nhận mã nguồn với {{oneTimePrice}} một lần và tự lo hosting, hoặc đăng ký {{monthlyPrice}} mỗi tháng hay {{yearlyPrice}} mỗi năm để chúng tôi đưa website lên mạng giúp bạn. Tên miền tính riêng, và gói năm trả giúp tới {{domainCredit}} tiền tên miền.",
-    "zh": "搭建网站是免费的。做好后，你可以一次性支付 {{oneTimePrice}} 拿走代码自行托管，或者订阅（每月 {{monthlyPrice}} 或每年 {{yearlyPrice}}），由我们帮你上线。域名另计，按年方案最多可抵扣 {{domainCredit}} 域名费用。",
-    "ja": "サイト作りは無料です。完成したら、1 回 {{oneTimePrice}} でコードを受け取ってご自身でホスティングするか、月額 {{monthlyPrice}} または年額 {{yearlyPrice}} のサブスクリプションで公開まで私たちにお任せいただけます。ドメインは別料金で、年額プランなら {{domainCredit}} まで私たちが負担します。",
-    "ru": "Создать сайт — бесплатно. Когда он готов, заберите код за {{oneTimePrice}} единоразово и разместите его сами или оформите подписку за {{monthlyPrice}} в месяц или {{yearlyPrice}} в год — и мы запустим сайт за вас. Домен оплачивается отдельно, а на годовом тарифе мы оплачиваем до {{domainCredit}} его стоимости.",
-    "ko": "사이트 만들기는 무료예요. 완성되면 {{oneTimePrice}}(1회)로 코드를 받아 직접 호스팅하거나, 월 {{monthlyPrice}} 또는 연 {{yearlyPrice}} 구독으로 저희가 온라인에 올려 드려요. 도메인은 별도이고, 연간 요금제에서는 최대 {{domainCredit}}까지 저희가 부담해요."
+    "en": "Building your site is free. When it's ready, get its code for {{oneTimePrice}} once and host it yourself, or subscribe for {{monthlyPrice}} a month or {{yearlyPrice}} a year and we'll put it online for you. A domain is extra; on the yearly plan, its first year is free if it costs {{freeDomainMaxPrice}} a year or less.",
+    "vi": "Xây dựng website là miễn phí. Khi đã sẵn sàng, bạn có thể nhận mã nguồn với {{oneTimePrice}} một lần và tự lo hosting, hoặc đăng ký {{monthlyPrice}} mỗi tháng hay {{yearlyPrice}} mỗi năm để chúng tôi đưa website lên mạng giúp bạn. Tên miền tính riêng; với gói năm, năm đầu của tên miền được miễn phí nếu giá từ {{freeDomainMaxPrice}} một năm trở xuống.",
+    "zh": "搭建网站是免费的。做好后，你可以一次性支付 {{oneTimePrice}} 拿走代码自行托管，或者订阅（每月 {{monthlyPrice}} 或每年 {{yearlyPrice}}），由我们帮你上线。域名另计；按年方案下，年费不超过 {{freeDomainMaxPrice}} 的域名第一年免费。",
+    "ja": "サイト作りは無料です。完成したら、1 回 {{oneTimePrice}} でコードを受け取ってご自身でホスティングするか、月額 {{monthlyPrice}} または年額 {{yearlyPrice}} のサブスクリプションで公開まで私たちにお任せいただけます。ドメインは別料金で、年額プランなら年 {{freeDomainMaxPrice}} 以下のドメインは初年度無料です。",
+    "ru": "Создать сайт — бесплатно. Когда он готов, заберите код за {{oneTimePrice}} единоразово и разместите его сами или оформите подписку за {{monthlyPrice}} в месяц или {{yearlyPrice}} в год — и мы запустим сайт за вас. Домен оплачивается отдельно; на годовом тарифе первый год домена бесплатен, если он стоит не больше {{freeDomainMaxPrice}} в год.",
+    "ko": "사이트 만들기는 무료예요. 완성되면 {{oneTimePrice}}(1회)로 코드를 받아 직접 호스팅하거나, 월 {{monthlyPrice}} 또는 연 {{yearlyPrice}} 구독으로 저희가 온라인에 올려 드려요. 도메인은 별도이고, 연간 요금제에서는 연 {{freeDomainMaxPrice}} 이하 도메인의 첫해가 무료예요."
   },
   "landing_faq_cost_q": {
     "en": "How much does it cost?",

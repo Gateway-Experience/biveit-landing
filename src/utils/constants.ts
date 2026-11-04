@@ -23,12 +23,14 @@ const DEFAULT_LANGUAGE: LanguageCode = 'en';
 //   oneTimePrice     pay once: the site's code to host yourself, plus the AI assistant for a month
 //   monthlyPrice     subscription, billed monthly: we host and deploy it, the AI assistant stays on
 //   yearlyPrice      the same subscription, billed yearly
-//   yearlyDomainCredit  on the yearly plan, how much of the domain's price we cover
+//   yearlyFreeDomainMaxPrice  on the yearly plan, a domain at this yearly price or less gets its first year free
+//                             (one per site, then its normal price); a dearer one gets nothing off
+//                             (biveit-backend's DOMAIN_PRICE_POINTS, `discountable`)
 const PRICING = {
   oneTimePrice: 19,
   monthlyPrice: 19,
   yearlyPrice: 159,
-  yearlyDomainCredit: 20,
+  yearlyFreeDomainMaxPrice: 20,
 };
 
 // The query param that carries a site idea into the app's new-project form (/projects?idea=...: the app opens the
