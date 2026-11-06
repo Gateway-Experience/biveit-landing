@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 import {
-  FourPixieGamesSite, TuViThanSoSite,
+  CryptoCalmSite, FourPixieGamesSite, TuViThanSoSite, WordPuzzleSite,
 } from 'src/components/pages/landing/ExampleSites';
 import PerfumeBottleIcon from 'src/components/pages/landing/PerfumeBottleIcon';
 import type { ArtIcon } from 'src/types/landing';
@@ -77,11 +77,13 @@ const OUR_TASKS: { id: string; labelKey: string; Icon: ArtIcon }[] = [
   { id: 'launch', labelKey: 'landing_deal_ours_launch', Icon: RocketIcon },
 ];
 
-// The example sites the "Ideas" section shows, in this order: two real sites (snapshots of their home pages,
+// The example sites the "Ideas" section shows, in this order: four real sites (snapshots of their home pages,
 // under their real addresses). Each card links to the live site (`href`).
 const SHOWCASE_SITES: { id: string; domainKey: string; typeKey: string; descKey: string; href: string; Site: () => React.ReactNode }[] = [
   { id: 'tuvi', domainKey: 'landing_example_domain_tuvi', typeKey: 'landing_biz_astrology', descKey: 'landing_site_tuvi_desc', href: 'https://tuvithanso.org', Site: TuViThanSoSite },
   { id: 'pixie', domainKey: 'landing_example_domain_pixie', typeKey: 'landing_biz_games', descKey: 'landing_site_pixie_desc', href: 'https://4pixiegames.com', Site: FourPixieGamesSite },
+  { id: 'wordpuzzle', domainKey: 'landing_example_domain_wordpuzzle', typeKey: 'landing_biz_puzzles', descKey: 'landing_site_wordpuzzle_desc', href: 'https://wordpuzzle.biveitapp.com', Site: WordPuzzleSite },
+  { id: 'cryptocalm', domainKey: 'landing_example_domain_cryptocalm', typeKey: 'landing_biz_crypto', descKey: 'landing_site_cryptocalm_desc', href: 'https://cryptocalm.biveitapp.com', Site: CryptoCalmSite },
 ];
 
 const COMPARE_ROWS = [

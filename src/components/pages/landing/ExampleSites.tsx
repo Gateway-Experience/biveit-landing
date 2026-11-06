@@ -2,11 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { CoffeeIcon } from 'lucide-react';
 import { cn } from 'cn';
 
+import cryptoCalmSnapshot from 'src/assets/showcase/cryptocalm.webp';
 import fourPixieGamesSnapshot from 'src/assets/showcase/4pixiegames.webp';
 import tuViThanSoSnapshot from 'src/assets/showcase/tuvithanso.webp';
+import wordPuzzleSnapshot from 'src/assets/showcase/wordpuzzle.webp';
 
-// Intentions: the customer sites the landing page shows: two real ones in the "Ideas" section (TuViThanSoSite and
-// FourPixieGamesSite, snapshots of their home pages) and a made-up café (CafeSite), the site the how-it-works demo
+// Intentions: the customer sites the landing page shows: four real ones in the "Ideas" section (TuViThanSoSite,
+// FourPixieGamesSite, WordPuzzleSite and CryptoCalmSite, snapshots of their home pages) and a made-up café (CafeSite), the site the how-it-works demo
 // builds, a small but believable home page in its own brand colors (the `--site-cafe` tokens). They're all drawn
 // on a 640x400 canvas; the caller scales them down with ScaledFrame.
 // Shop names, product names and prices are flavor and stay as-is in every language.
@@ -40,6 +42,18 @@ function TuViThanSoSite() {
 // taken the same way.
 function FourPixieGamesSite() {
   return <img src={fourPixieGamesSnapshot.src} alt='' width={1280} height={800} loading='lazy' decoding='async' className='size-full object-cover object-top' />;
+}
+
+// Also real: a snapshot of wordpuzzle.biveitapp.com (PuzzleForge, a crossword and word search maker), built with
+// Biveit, taken the same way.
+function WordPuzzleSite() {
+  return <img src={wordPuzzleSnapshot.src} alt='' width={1280} height={800} loading='lazy' decoding='async' className='size-full object-cover object-top' />;
+}
+
+// Also real: a snapshot of cryptocalm.biveitapp.com (BitCalm, a calm feed of crypto news with live prices), built
+// with Biveit, taken the same way.
+function CryptoCalmSite() {
+  return <img src={cryptoCalmSnapshot.src} alt='' width={1280} height={800} loading='lazy' decoding='async' className='size-full object-cover object-top' />;
 }
 
 function CafeSite() {
@@ -96,5 +110,7 @@ function CafeSite() {
 export {
   TuViThanSoSite,
   FourPixieGamesSite,
+  WordPuzzleSite,
+  CryptoCalmSite,
   CafeSite,
 };

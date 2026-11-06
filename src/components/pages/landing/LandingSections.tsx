@@ -39,10 +39,11 @@ function CheckBullet() {
 // turns into the page's own background, so the next section carries on seamlessly. Placed inside the block that
 // starts with the prompt box (Landing puts it there), so the rim always meets the box, whatever the language or
 // screen; the shapes run far wider than the screen and the hero clips them. Pure CSS, nothing to load.
-function HeroHorizon() {
+// The showcase uses it too, upside down: `className` places and flips it (it replaces the default `top-0`).
+function HeroHorizon({ className = 'top-0' }: { className?: string }) {
   const shapeClass = 'absolute left-1/2 h-[90rem] w-[max(180vw,110rem)] -translate-x-1/2 rounded-[50%]';
   return (
-    <div aria-hidden='true' className='pointer-events-none absolute inset-x-0 top-0 -z-10'>
+    <div aria-hidden='true' className={cn('pointer-events-none absolute inset-x-0 -z-10', className)}>
       <div className={cn(shapeClass, '-top-48 bg-[color-mix(in_oklab,var(--primary)_55%,var(--brand-ink))] opacity-70 blur-[90px]')} />
       <div className={cn(shapeClass, '-top-8 bg-primary blur-2xl')} />
       <div className={cn(shapeClass, 'top-6 bg-linear-to-b from-[color-mix(in_oklab,var(--primary)_35%,var(--background))] from-0% to-background to-[18%] shadow-[inset_0_10px_30px_-16px_var(--brand-light)] blur-[6px]')} />
@@ -52,9 +53,10 @@ function HeroHorizon() {
 
 // Two fine waves along the bottom of the hero, drifting slowly sideways (the marquee slide in global.css: each
 // path repeats every half of its width, so sliding by half loops without a jump). With reduced motion on, still.
-function HeroWaves() {
+// `className` places them (it replaces the default `bottom-10`; the showcase puts them at its top).
+function HeroWaves({ className = 'bottom-10' }: { className?: string }) {
   return (
-    <div aria-hidden='true' className='pointer-events-none absolute inset-x-0 bottom-10 -z-10 overflow-hidden'>
+    <div aria-hidden='true' className={cn('pointer-events-none absolute inset-x-0 -z-10 overflow-hidden', className)}>
       <svg
         viewBox='0 0 2880 64'
         preserveAspectRatio='none'
