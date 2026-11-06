@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { ArrowRightIcon } from 'lucide-react';
-import { cn } from 'cn';
 
 import Reveal from 'src/components/common/Reveal';
 import BusinessOrbit from 'src/components/pages/landing/BusinessOrbit';
@@ -10,7 +9,7 @@ import HowItWorks from 'src/components/pages/landing/HowItWorks';
 import { SectionHeading } from 'src/components/pages/landing/LandingSections';
 import ShowcaseGallery from 'src/components/pages/landing/ShowcaseGallery';
 import {
-  BRAND_BUTTON_CLASS, BUSINESSES, SHOWCASE_SITES,
+  BUSINESSES, SHOWCASE_SITES,
 } from 'src/components/pages/landing/landingData';
 import { withLanguage } from 'src/i18n/i18n';
 import { APP_START_URL } from 'src/utils/appUrls';
@@ -34,7 +33,7 @@ function ShowcaseWithSites() {
         <Reveal className='mt-12 flex justify-center'>
           <a
             href={APP_START_URL}
-            className={cn('inline-flex h-13 w-[186px] items-center justify-center gap-2 rounded-lg pr-5 pl-6 font-semibold whitespace-nowrap transition-all', BRAND_BUTTON_CLASS)}
+            className='inline-flex h-13 w-[186px] items-center justify-center gap-2 rounded-lg bg-brand-light pr-5 pl-6 font-semibold whitespace-nowrap text-brand-ink transition-all hover:brightness-95'
           >
             {t('landing_cta_start')}
             <ArrowRightIcon className='size-4.5' />

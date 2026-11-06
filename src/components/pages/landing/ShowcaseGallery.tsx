@@ -3,6 +3,7 @@ import { ArrowUpRightIcon } from 'lucide-react';
 import { cn } from 'cn';
 
 import Reveal from 'src/components/common/Reveal';
+import { HeroHorizon, HeroWaves } from 'src/components/pages/landing/LandingSections';
 import ScaledFrame from 'src/components/common/ScaledFrame';
 import { BrowserDots } from 'src/components/pages/landing/ProductSnippets';
 import { STAGGER_MS } from 'src/components/pages/landing/landingData';
@@ -42,25 +43,40 @@ function SiteCard({ site }: { site: GallerySite }) {
 }
 
 // Original purpose: the landing page's "what could yours look like".
-// Intentions: the example sites side by side in one still row (stacked on phones), each fading in as it scrolls
-// into view. `heading` is the section's title block, rendered above; `footer` (optional) goes under the row.
+// Intentions: the example sites in one still row of four (two by two on tablets, stacked on phones), each fading
+// in as it scrolls into view. On the hero's backdrop upside down, so the page ends the way it starts: the page's
+// own background at the top (carrying on from the section above) with the hero's two fine waves, then the
+// horizon's lavender rim at the footer (the start button), like the hero's rim at its prompt box, and the navy
+// night sky below it. `heading` is the section's title block, rendered above; `footer` (optional) goes under the
+// row.
 export default function ShowcaseGallery({ sites, heading, footer }: { sites: GallerySite[]; heading: React.ReactNode; footer?: React.ReactNode }) {
   return (
-    <section data-section='showcase' className='border-y bg-card'>
-      {/* Padding: the landing's section gap (SECTION_PAD_BOTTOM_CLASS in Landing), on top too since the border
-          sits between it and the section above. With a footer (the start button), the bottom matches the gap
-          above the button (mt-12) instead. */}
-      <div className={cn('mx-auto w-full max-w-5xl px-4 pt-14 sm:px-6 sm:pt-20', footer ? 'pb-12' : 'pb-14 sm:pb-20')}>
+    <section data-section='showcase' className='relative isolate overflow-hidden bg-background'>
+      {/* Padding: the landing's section gap on top; at the bottom, the same as the gap above the button (the
+          footer's mt-12), so the button sits evenly between the cards and the section's end. */}
+      <div className='mx-auto w-full max-w-7xl px-4 pt-14 pb-12 sm:px-6 sm:pt-20'>
         {heading}
-        <div className='mt-10 grid gap-6 sm:grid-cols-2'>
+        <div className='mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           {sites.map((site, index) => (
             <Reveal key={site.id} delayMs={index * STAGGER_MS}>
               <SiteCard site={site} />
             </Reveal>
           ))}
         </div>
-        {footer}
+        {footer && (
+          <div className='relative'>
+            {/* The flip point is the button's middle: half the wrapper, plus half the footer's mt-12 above it. The
+                horizon mirrored there, over plain navy (the horizon's shapes don't reach the section's bottom on
+                every screen). The navy starts 10rem higher, under the horizon's solid rim and floor: the haze is
+                see-through, so a navy edge where it starts would show through it as a line. */}
+            <div aria-hidden='true' className='pointer-events-none absolute top-[calc(50%-8.5rem)] left-1/2 -z-20 h-[100rem] w-[300vw] -translate-x-1/2 bg-brand-ink' />
+            <HeroHorizon className='top-[calc(50%+1.5rem)] origin-top -scale-y-100' />
+            {footer}
+          </div>
+        )}
       </div>
+      {/* After the content, so the waves draw over the horizon's floor. */}
+      <HeroWaves className='top-2' />
     </section>
   );
 }

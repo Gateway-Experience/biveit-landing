@@ -65,6 +65,54 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ru": "Опишите игру одной фразой, и её сделают и опубликуют.",
     "ko": "게임을 한 문장으로 설명하면 만들어서 출시까지 해 줘요."
   },
+  "landing_biz_puzzles": {
+    "en": "Word puzzles",
+    "vi": "Trò chơi ô chữ",
+    "zh": "文字谜题",
+    "ja": "言葉パズル",
+    "ru": "Словесные головоломки",
+    "ko": "단어 퍼즐"
+  },
+  "landing_example_domain_wordpuzzle": {
+    "en": "wordpuzzle.biveitapp.com",
+    "vi": "wordpuzzle.biveitapp.com",
+    "zh": "wordpuzzle.biveitapp.com",
+    "ja": "wordpuzzle.biveitapp.com",
+    "ru": "wordpuzzle.biveitapp.com",
+    "ko": "wordpuzzle.biveitapp.com"
+  },
+  "landing_site_wordpuzzle_desc": {
+    "en": "Turn any topic into a crossword or word search.",
+    "vi": "Biến bất kỳ chủ đề nào thành ô chữ hoặc trò tìm từ.",
+    "zh": "把任何主题变成填字游戏或找词游戏。",
+    "ja": "どんなテーマもクロスワードや単語探しパズルに。",
+    "ru": "Превратите любую тему в кроссворд или поиск слов.",
+    "ko": "어떤 주제든 십자말풀이나 단어 찾기로 만들어 줘요."
+  },
+  "landing_biz_crypto": {
+    "en": "Crypto news",
+    "vi": "Tin tức tiền mã hóa",
+    "zh": "加密货币资讯",
+    "ja": "暗号資産ニュース",
+    "ru": "Новости о криптовалютах",
+    "ko": "암호화폐 뉴스"
+  },
+  "landing_example_domain_cryptocalm": {
+    "en": "cryptocalm.biveitapp.com",
+    "vi": "cryptocalm.biveitapp.com",
+    "zh": "cryptocalm.biveitapp.com",
+    "ja": "cryptocalm.biveitapp.com",
+    "ru": "cryptocalm.biveitapp.com",
+    "ko": "cryptocalm.biveitapp.com"
+  },
+  "landing_site_cryptocalm_desc": {
+    "en": "All the crypto news in one calm feed, with live prices.",
+    "vi": "Mọi tin tức tiền mã hóa trong một bảng tin dễ đọc, kèm giá trực tiếp.",
+    "zh": "所有加密货币资讯汇成一个清爽的信息流，附实时价格。",
+    "ja": "暗号資産のニュースを落ち着いた一つのフィードに。価格もリアルタイムで。",
+    "ru": "Все новости о криптовалютах в одной спокойной ленте, с ценами в реальном времени.",
+    "ko": "암호화폐 뉴스를 차분한 피드 하나에 모았어요. 실시간 시세도 함께요."
+  },
   "landing_example_domain_tuvi": {
     "en": "tuvithanso.org",
     "vi": "tuvithanso.org",
@@ -1066,12 +1114,12 @@ const STRINGS: Record<string, Record<string, string>> = {
     "ko": "아이디어"
   },
   "landing_showcase_subtitle": {
-    "en": "A few sites people dream up. Yours gets shaped around how your business actually works.",
-    "vi": "Một vài ý tưởng để bạn tham khảo. Website của bạn sẽ được thiết kế riêng theo đúng cách bạn kinh doanh.",
-    "zh": "这是大家想象中的一些网站。你的网站会按照你真实的经营方式来打造。",
-    "ja": "みんなが思い描くサイトの一例です。あなたのサイトは、実際のビジネスのやり方に合わせて作られます。",
-    "ru": "Несколько сайтов, о которых мечтают люди. Ваш будет устроен так, как на самом деле работает ваш бизнес.",
-    "ko": "사람들이 꿈꾸는 사이트 몇 가지예요. 당신의 사이트는 실제 사업 방식에 맞춰 만들어져요."
+    "en": "Real sites, live right now. Yours gets shaped around how your business actually works.",
+    "vi": "Những website thật, đang hoạt động. Website của bạn sẽ được thiết kế riêng theo đúng cách bạn kinh doanh.",
+    "zh": "这些都是真实的网站，现在就能访问。你的网站会按照你真实的经营方式来打造。",
+    "ja": "どれも今公開中の実際のサイトです。あなたのサイトは、実際のビジネスのやり方に合わせて作られます。",
+    "ru": "Настоящие сайты, которые уже работают. Ваш будет устроен так, как на самом деле работает ваш бизнес.",
+    "ko": "모두 지금 운영 중인 실제 사이트예요. 당신의 사이트는 실제 사업 방식에 맞춰 만들어져요."
   },
   "landing_showcase_title": {
     "en": "What could yours look like?",
